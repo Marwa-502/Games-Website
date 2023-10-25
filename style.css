@@ -1,0 +1,221 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* General styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: grey;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.img-banner {
+    position: relative;
+    text-align: center;
+}
+
+.img-banner img {
+    width: 100%;
+    height: auto;
+}
+
+.img-banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+}
+
+
+
+
+
+
+/* Styling for an element with class "img..." (not used in the provided HTML) */
+.img-hangman {
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/hangman.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img-rockpaperscissors {
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/rockpaperscissors.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img-blackjack {
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/blackjack.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img-numberguesser {
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/numberguesser.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+
+
+
+/* Image grid layout */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-box {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+
+
+/* Styling for the header (top navigation and user info links) */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+/* Styling for the user info links under the banner */
+.userinfo {
+    display: inline;
+}
+
+.userinfo ul {
+    list-style: none;
+}
+
+.userinfo li {
+    display: inline;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+/* Styling for the navigation bar */
+nav {
+    text-align: center;
+    padding: 10px;
+}
+
+.navlinks {
+    display: block;
+    margin: 0 20px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+/* Styling for links when hovered over */
+li a:hover {
+    background-color: #555;
+    color: orange;
+}
+
+
+
+
+
+
+
+/* Styling for general navigation links */
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* Styling for the main content area */
+main {
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+/* Styling for the footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
