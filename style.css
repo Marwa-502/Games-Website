@@ -9,213 +9,164 @@ li {
     padding: 0;
 }
 
-/* General styling for the entire page */
+/* anything related to the whole entire page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: grey;
+    font-family:fantasy;
+    background-color: black;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-
-
-
-
+/* everything related to the banner */
 .img-banner {
-    position: relative;
-    text-align: center;
+    position: relative;   
+    text-align: center; 
 }
 
-.img-banner img {
-    width: 100%;
-    height: auto;
+.img-banner img { /* This section styles the banner image inside the container */
+    width: 100%;     /* Set the image width to 100% of the container's width */
+    height: 100px;     /* Fix the image height at 100 pixels */
 }
 
-.img-banner h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.img-banner h1 { /* This section styles the text ("h1") inside the container */
+    position: absolute;     /* Position the text absolutely within the container */
+    top: 50%;     /* vertical */
+    left: 50%;     /* horizontal*/
+    transform:translate(-50%, -50%);     /* Use "transform" to adjust the centering of the text */
+    color: #fff; 
+    font-size: 40px;     
+
+}
+
+
+
+
+header { /* top user info links */
+    background-color: #333; /* color for the margin on top of page. Not sure if we need this*/
     color: #fff;
-    font-size: 40px;
+    text-align: right; /* puts the sign in links on top right of page*/
+    padding: 5px;
+}
+
+/* user info links under the banner */
+.userinfo {
+    display: inline;
+}
+.userinfo ul {
+    list-style: none;
+}
+.userinfo li {
+    display: inline; /* lines up the links on one line*/
+    margin-right: 20px;
+}
+.userinfo a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff;
+    font-weight: bold; 
+}
+
+.userinfo a:hover {
+    text-decoration: underline; /* underline links on hover */
+    color: purple; /* change text color on hover */
 }
 
 
 
 
 
-
-/* Styling for an element with class "img..." (not used in the provided HTML) */
-.img-hangman {
-    width: 100px;
-    height: 100px;
-    background-image: url(./images/hangman.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+/* Everything related to the Nav *bar* */
+nav {
+    text-align: center;
+    padding: 10px;
 }
-
-.img-rockpaperscissors {
-    width: 100px;
-    height: 100px;
-    background-image: url(./images/rockpaperscissors.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+.navlinks { /* spacing the links */
+    display: block; /* stacks links */
+    margin: 0 20px; /*space from left to right*/
+    text-align: left; /* puts links on the left of the page*/
 }
-
-.img-blackjack {
-    width: 100px;
-    height: 100px;
-    background-image: url(./images/blackjack.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+nav a {     /* prettying up the navigation bar */
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
 }
-
-.img-numberguesser {
-    width: 100px;
-    height: 100px;
-    background-image: url(./images/numberguesser.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+nav a:hover {
+    text-decoration: underline; /* underline links on hover */
+    color: purple; /* changing text color on hover */
 }
 
 
 
+/* Everything related to the dropdown menu on the homepage */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content { /* prettying up the dropdown */
+    display: none;
+    position: absolute;
+    background-color:black;
+    min-width: 160px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {  /* features for hovering over the game tab */
+    display: block;
+  }
+  .dropdown-content li {   /* spacing of each game link inside dropdown */
+    padding: 10px;
+  }
+  .dropdown-content li:hover { /* features for hovering over links inside dropdown */
+    background-color:lightseagreen;
+  }
+  
 
 
 
-
-/* Image grid layout */
-.image-container {
+/* Everything related to the game images on home page. */
+.image-container { /* prettying up the grid layout */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
-.image-box {
-    width: 150px;
-    height: 150px;
+.image-box {  /* lining up the whole image container */
+    width: 250px;
+    height: 250px;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #ccc;
 }
-
-.image-box img {
+.image-box img {  /* spacing the images inside of the container */
     max-width: 100%;
     max-height: 100%;
 }
 
 
 
-
-
-
-
-/* Styling for the header (top navigation and user info links) */
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: right;
-    padding: 10px;
-}
-
-
-
-
-
-
-
-
-/* Styling for the user info links under the banner */
-.userinfo {
-    display: inline;
-}
-
-.userinfo ul {
-    list-style: none;
-}
-
-.userinfo li {
-    display: inline;
-    margin-right: 20px;
-}
-
-
-
-
-
-
-
-
-/* Styling for the navigation bar */
-nav {
-    text-align: center;
-    padding: 10px;
-}
-
-.navlinks {
-    display: block;
-    margin: 0 20px;
-    text-align: left;
-}
-
-
-
-
-
-
-
-
-
-/* Styling for links when hovered over */
-li a:hover {
-    background-color: #555;
-    color: orange;
-}
-
-
-
-
-
-
-
-/* Styling for general navigation links */
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-
-
-
-
-
-
-
-/* Styling for the main content area */
-main {
+main { /* nothing in here yet but its just the main content area */
     padding: 20px;
 }
 
 
 
+footer { /* prettying up the footer */
 
-
-
-
-
-/* Styling for the footer */
-footer {
     margin-top: auto;
     text-align: center;
     background-color: #333;
     color: #fff;
     padding: 10px;
 }
+
+
+
+/* website screen sizing to make site responsive to different media*/
+
+@media screen and (max-width: 768px) {} /* Phones */
+    
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {} /* Tablets */
+    
+
+@media screen and (min-width: 1025px) {}/* Desktops */
