@@ -18,43 +18,43 @@ body {
     flex-direction: column;
 }
 
-/* everything related to the banner */
-.img-banner {
-    position: relative;   
-    text-align: center; 
+.background {
+    position:fixed;   
+    text-align: center;
+    opacity: 0.1;
+    background-size: cover;
 }
 
-.img-banner img { /* This section styles the banner image inside the container */
-    width: 100%;     /* Set the image width to 100% of the container's width */
-    height: 100px;     /* Fix the image height at 100 pixels */
-}
-
-.img-banner h1 { /* This section styles the text ("h1") inside the container */
-    position: absolute;     /* Position the text absolutely within the container */
-    top: 50%;     /* vertical */
-    left: 50%;     /* horizontal*/
-    transform:translate(-50%, -50%);     /* Use "transform" to adjust the centering of the text */
-    color: #fff; 
-    font-size: 40px;     
-
-}
-
-
+.button {
+    background-color: #4CAF50; 
+    width: 8%;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 88px;
+  }
 
 
-header { /* top user info links */
-    background-color: #333; /* color for the margin on top of page. Not sure if we need this*/
+/* user info links */
+header { 
+    background-color: #333; 
     color: #fff;
-    text-align: right; /* puts the sign in links on top right of page*/
+    text-align: right;
     padding: 5px;
 }
 
-/* user info links under the banner */
 .userinfo {
     display: inline;
 }
 .userinfo ul {
     list-style: none;
+    font-size: larger;
 }
 .userinfo li {
     display: inline; /* lines up the links on one line*/
@@ -65,7 +65,6 @@ header { /* top user info links */
     color: #fff;
     font-weight: bold; 
 }
-
 .userinfo a:hover {
     text-decoration: underline; /* underline links on hover */
     color: purple; /* change text color on hover */
@@ -75,15 +74,15 @@ header { /* top user info links */
 
 
 
-/* Everything related to the Nav *bar* */
+/*  Nav bar on homepage */
 nav {
     text-align: center;
     padding: 10px;
 }
 .navlinks { /* spacing the links */
-    display: block; /* stacks links */
-    margin: 0 20px; /*space from left to right*/
-    text-align: left; /* puts links on the left of the page*/
+    display: block; 
+    margin: 0 20px; /* left to right */
+    text-align: left; 
 }
 nav a {     /* prettying up the navigation bar */
     text-decoration: none;
@@ -91,13 +90,13 @@ nav a {     /* prettying up the navigation bar */
     font-weight: bold;
 }
 nav a:hover {
-    text-decoration: underline; /* underline links on hover */
-    color: purple; /* changing text color on hover */
+    text-decoration: underline; /* underline when hovered over */
+    color: purple; /* changing text color when hovered over */
 }
 
 
 
-/* Everything related to the dropdown menu on the homepage */
+/*  Dropdown menu on the homepage */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -109,21 +108,21 @@ nav a:hover {
     min-width: 160px;
     z-index: 1;
   }
-  .dropdown:hover .dropdown-content {  /* features for hovering over the game tab */
+  .dropdown:hover .dropdown-content {  /* hover over the tab */
     display: block;
   }
-  .dropdown-content li {   /* spacing of each game link inside dropdown */
+  .dropdown-content li {   /* spacing links */
     padding: 10px;
   }
-  .dropdown-content li:hover { /* features for hovering over links inside dropdown */
+  .dropdown-content li:hover { /* links inside dropdown */
     background-color:lightseagreen;
   }
   
 
 
 
-/* Everything related to the game images on home page. */
-.image-container { /* prettying up the grid layout */
+/* Game images on home page. */
+.image-container { /* grid layout */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -137,15 +136,13 @@ nav a:hover {
     align-items: center;
     border: 1px solid #ccc;
     position: relative; 
-    
 }
 .image-box img {  /* spacing the images inside of the container */
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
-
-.overlay { /*Creating a sliding overlay over images*/
+.overlay { /* sliding overlay over images*/
     position: absolute;
     bottom: 0;
     left: 0;
@@ -159,8 +156,8 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     opacity: 0;
+    pointer-events: none;
 }
-
 .image-box:hover .overlay{
     height: 100%;
     opacity: 1;
@@ -171,7 +168,42 @@ nav a:hover {
     
   }
 
+/* all page titles and descriptions */
+.page-heading {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+  }
+  .page-heading2 {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+  }
 
+.Account-Form {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+  #intro-paragraph {
+    font-size: 18px;
+    color: white;
+    text-align:center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+  
 
 main { /* nothing in here yet but its just the main content area */
     padding: 20px;
@@ -190,7 +222,7 @@ footer { /* prettying up the footer */
 
 
 
-/* website screen sizing to make site responsive to different media*/
+/*  screen sizing to make site responsive */
 
 @media screen and (max-width: 768px) {} /* Phones */
     
