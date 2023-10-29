@@ -57,6 +57,17 @@
             <h1>Tic Tac Toe</h1>
             <div id="board"></div>
             <div id="result"></div>
+            <button id="home" class="return-button">Home</button>
+
+            <script>
+                // Get home button element
+                const homeButton = document.getElementById("home");
+
+                // Add event listener to home button
+                homeButton.addEventListener("click", () => {
+                    window.location.href = "../index.html";
+                });
+            </script>
             <button id="play-again" style="display:none;">Play Again</button>
 
             <script>
