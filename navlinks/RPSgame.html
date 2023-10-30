@@ -7,23 +7,37 @@
     <title>Document</title>
     <body>
       <div class="background">
-        <img src="../images/background.jpg" alt="background" />
+        <div class="navbar">
+          <a href="../index.html">Home</a>
+          <a href="../navlinks/leaderboard.html">Leaderboard</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Games
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+              <a href="../navlinks/HangmanGame.html">Hangman</a>
+              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-content">
+          <h1 class="page-heading">Rock Paper Scissors</h1>
+          <h2 class="page-heading2">Best out of 5!</h2>
+          <p id="intro-paragraph">
+            Rock beats scissors, scissors cut paper, and paper covers rock. It's
+            the ultimate quick decision-maker! Rock Paper Scissors is a simple
+            game of wits where you challenge a friend or computer to make
+            split-second choices. It's all about outsmarting your opponent with
+            a flick of the wrist and a triumphant shout of "Rock, Paper,
+            Scissors, Shoot!"
+          </p>
+        </div>
+
+        <!-- <script src="../JSfiles/RPSGame.js"></script> -->
       </div>
-
-      <h1 class="page-heading">Rock Paper Scissors</h1>
-      <h2 class="page-heading2">Best out of 5!</h2>
-      <p id="intro-paragraph">
-        Rock beats scissors, scissors cut paper, and paper covers rock. It's the
-        ultimate quick decision-maker! Rock Paper Scissors is a simple game of
-        wits where you challenge a friend or computer to make split-second
-        choices. It's all about outsmarting your opponent with a flick of the
-        wrist and a triumphant shout of "Rock, Paper, Scissors, Shoot!"
-      </p>
-
-      <div id="game-board"></div>
-
-      <!-- <script src="../JSfiles/RPSGame.js"></script> -->
-      <a href="../index.html" class="button">Home</a>
     </body>
   </head>
 </html>

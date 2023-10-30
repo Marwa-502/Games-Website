@@ -8,29 +8,35 @@
     <title>Document</title>
     <body>
       <div class="background">
-        <img src="../images/background.jpg" alt="background" />
-      </div>
+        <div class="navbar">
+          <a href="../index.html">Home</a>
+          <a href="../navlinks/leaderboard.html">Leaderboard</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Games
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+              <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+            </div>
+          </div>
+        </div>
 
-      <h1 class="page-heading">Hangman Game</h1>
-      <h2 class="page-heading2">Guess the word by selecting letters.</h2>
-      <p id="intro-paragraph">
-        Hangman is the classic word-guessing game where you try to figure out a
-        secret word letter by letter. You have a limited number of guesses, and
-        with each incorrect guess, part of a cute stick figure gets closer to,
-        well, hanging. Can you save your new friend by solving the mystery word
-        before it's too late?
-      </p>
+        <div class="center-content">
+          <h1 class="page-heading">Hangman Game</h1>
+          <h2 class="page-heading2">Guess the word by selecting letters.</h2>
+          <p id="intro-paragraph">
+            Hangman is the classic word-guessing game where you try to figure
+            out a secret word letter by letter. You have a limited number of
+            guesses, and with each incorrect guess, part of a cute stick figure
+            gets closer to, well, hanging. Can you save your new friend by
+            solving the mystery word before it's too late?
+          </p>
+        </div>
 
-      <div id="game-board">
-        <!-- Your Hangman game board goes here -->
-      </div>
-
-      <!-- Include your JavaScript for the game -->
-
-      <!-- <script src="../JSfiles/Hangman.js"></script> -->
-
-      <div>
-        <a href="../index.html" class="button">Home</a>
+        <!-- <script src="../JSfiles/Hangman.js"></script> -->
       </div>
     </body>
   </head>

@@ -6,26 +6,60 @@
     <link rel="stylesheet" type="text/css" href="../style.css" />
 
     <title>Document</title>
-
-    <body>
-      <div class="background">
-        <img src="../images/background.jpg" alt="background" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+            <a href="../navlinks/HangmanGame.html">Hangman</a>
+            <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+          </div>
+        </div>
       </div>
 
-      <h1 class="page-heading">Number Guessing Game</h1>
-      <h2 class="page-heading2">Guess A Number!!</h2>
-      <p id="intro-paragraph">
-        Imagine you're a mind reader, but for numbers! In the Number Guesser
-        Game, you pick a number within a specific range, and the game tries to
-        guess it. You'll provide hints like "too high" or "too low" until the
-        game magically reads your mind and figures out your number. It's like
-        telepathy, but with numbers!
-      </p>
+      <div class="center-content">
+        <h1 class="page-heading">Number Guessing Game</h1>
+        <h2 class="page-heading2">Guess A Number!!</h2>
+        <p id="intro-paragraph">
+          Imagine you're a mind reader, but for numbers! In the Number Guesser
+          Game, you pick a number within a specific range, and the game tries to
+          guess it. You'll provide hints like "too high" or "too low" until the
+          game magically reads your mind and figures out your number. It's like
+          telepathy, but with numbers!
+        </p>
+      </div>
 
-      <div id="game-board"></div>
+      <div class="center-game">
+        <input
+          type="number"
+          id="userGuess"
+          min="1"
+          max="15"
+          style="width: 150px"
+        />
+        <button id="submitGuess" style="width: 150px; color: blue">
+          Submit Your Guess!
+        </button>
+        <p id="message" style="color: yellow"></p>
+        <br />
+        <br />
+        <p id="timer" style="color: yellow">
+          Times Remaining: <span id="timeLeft">60</span>
+        </p>
+        <button id="playAgain" style="width: 150px; color: blue">
+          Play Again
+        </button>
+      </div>
 
-      <!-- <script src="../JSfiles/NumGuesser.js "></script> -->
-      <a href="../index.html" class="button">Home</a>
-    </body>
-  </head>
+      <script src="../JSfiles/NumGuesser.js"></script>
+    </div>
+  </body>
 </html>

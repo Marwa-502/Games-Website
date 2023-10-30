@@ -7,22 +7,34 @@
     <title>Document</title>
     <body>
       <div class="background">
-        <img src="../images/background.jpg" alt="background" />
+        <div class="navbar">
+          <a href="../index.html">Home</a>
+          <a href="../navlinks/leaderboard.html">Leaderboard</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Games
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+              <a href="../navlinks/HangmanGame.html">Hangman</a>
+              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+              <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-content">
+          <h1 class="page-heading">Blackjack</h1>
+          <h2 class="page-heading2">Can You Get To 21?</h2>
+          <p id="intro-paragraph">
+            Blackjack is like a fancy card game where you aim to get as close to
+            21 points as possible without going over. It's a bit like
+            challenging the dealer to a high-stakes game of "who's closer to
+            cool." Just don't push your luck too far, or you might go bust!
+          </p>
+        </div>
       </div>
-
-      <h1 class="page-heading">Blackjack</h1>
-      <h2 class="page-heading2">Can You Get To 21?</h2>
-      <p id="intro-paragraph">
-        Blackjack is like a fancy card game where you aim to get as close to 21
-        points as possible without going over. It's a bit like challenging the
-        dealer to a high-stakes game of "who's closer to cool." Just don't push
-        your luck too far, or you might go bust!
-      </p>
-
-      <div id="game-board"></div>
-
-      <!-- <script src="../JSfiles/Blackjack.js "></script> -->
-      <a href="../index.html" class="button">Home</a>
     </body>
   </head>
 </html>
