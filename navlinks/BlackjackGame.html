@@ -33,6 +33,26 @@
             challenging the dealer to a high-stakes game of "who's closer to
             cool." Just don't push your luck too far, or you might go bust!
           </p>
+
+          <div class="center-game-blackjack">
+            <div style="color: blue">
+              <h3>Roll & Win!</h3>
+              <p>Pick a number between 1 and 5:</p>
+              <input type="number" id="playerChoice" min="1" max="5" />
+              <button id="playButton">Roll Dice</button>
+              <p id="computersPlayLabel">
+                Computer's Play: <span id="computersPlay"></span>
+              </p>
+              <p>Total: <span id="total"></span></p>
+              <p id="error"></p>
+              <p id="output"></p>
+              <button id="playAgain" style="width: 150px; color: blue">
+                Play Again
+              </button>
+            </div>
+          </div>
+
+          <script src="../JSfiles/Blackjack.js"></script>
         </div>
       </div>
     </body>

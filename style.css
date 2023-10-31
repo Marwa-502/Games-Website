@@ -12,7 +12,7 @@ li {
 
 /************************************/
 body {
-    font-family:fantasy;
+    font-family:'Courier New', Courier, monospace;
     background-color: black;
     min-height: 100vh;
     display: flex;
@@ -86,7 +86,7 @@ body {
     color: purple; /* change text color on hover */
 }
 
-.Account-Form {
+.Account-Form, .New-Account-From {
     font-size: 18px;
     color: white;
     text-align: center;
@@ -119,11 +119,9 @@ body {
     font-family: inherit;
     margin: 0;
   }
-  
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: hsl(275, 100%, 50%);
   }
-  
   .dropdown-content {
     display: none;
     position: absolute;
@@ -132,7 +130,6 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
   .dropdown-content a {
     float: none;
     color: black;
@@ -141,16 +138,18 @@ body {
     display: block;
     text-align: left;
   }
-  
   .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: hsl(300, 100%, 73%);
   }
-  
   .dropdown:hover .dropdown-content {
     display: block;
   }
 
-
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
 
 /************************************/
 /* jpegs on homepage */
@@ -160,9 +159,9 @@ body {
     justify-content: center;
 }
 .image-box {  
-    width: 200px;
-    height: 200px;
-    margin: 15px;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,9 +198,10 @@ body {
     text-align: center;
     
   }
+
+
+
 /************************************/
-
-
 /* titles / descriptions */
 .page-heading {
     font-size: 50px;
@@ -209,7 +209,9 @@ body {
     text-align: center;
     justify-content:center;
     margin: 50px;
+    
   }
+
   .page-heading2 {
     font-size: 30px;
     color:black;
@@ -238,22 +240,32 @@ body {
 
 .center-game {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  width: 200px;
-  height: 300px;
-  margin: 10px;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border: 3px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 400px auto;
+  text-align: center;
+}
+
+.center-game-blackjack {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 300px;
+  height: 200px;
   border: 3px solid #ccc;
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 200px auto;
 }
-
-
 
   
 /************************************/

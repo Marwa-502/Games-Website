@@ -45,7 +45,7 @@ function countdown(seconds) {
 
 function startGame() {
     numGuesses = 5;
-    randomNum = Math.floor(Math.random() * 25);
+    randomNum = Math.floor(Math.random() * 10);
     submitGuessButton.disabled = false;
     messageElement.textContent = "";
 }
@@ -55,7 +55,7 @@ submitGuessButton.addEventListener("click", checkGuess);
 playAgainButton.addEventListener("click", () => location.reload());
 
 // Start the game when the page loads
-countdown(60);
+countdown(30);
 startGame();
 
 
