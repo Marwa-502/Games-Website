@@ -3,15 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
+
     <body>
-      <h1>Blackjack</h1>
-      <p>Can You Get To 21?</p>
+      <div class="background">
+        <div class="navbar">
+          <a href="../index.html" class="btn"
+            ><i class="fa fa-home"></i> Home</a
+          >
+          <a href="../navlinks/leaderboard.html">Leaderboard</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Games
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+              <a href="../navlinks/HangmanGame.html">Hangman</a>
+              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+              <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+            </div>
+          </div>
+        </div>
 
-      <div id="game-board"></div>
+        <div class="center-content">
+          <h1 class="page-heading">Blackjack</h1>
+          <h2 class="page-heading2">Can You Get To 21?</h2>
+          <p id="intro-paragraph">
+            Blackjack is like a fancy card game where you aim to get as close to
+            21 points as possible without going over. It's a bit like
+            challenging the dealer to a high-stakes game of "who's closer to
+            cool." Just don't push your luck too far, or you might go bust!
+          </p>
 
-      <script src="../JSfiles/Blackjack.js "></script>
-      <a href="../index.html">Go back to the main page</a>
+          <div class="center-game-blackjack">
+            <div style="color: blue">
+              <h3>Roll & Win!</h3>
+
+              <p>"Roll" a number between 1 - 5:</p>
+
+              <br />
+
+              <input type="number" id="playerChoice" min="1" max="5" />
+
+              <button id="playButton">Roll Dice</button>
+
+              <p id="computersPlayLabel">
+                Computer's Play: <span id="computersPlay"></span>
+              </p>
+
+              <br />
+
+              <p>Total: <span id="total"></span></p>
+              
+              <br />
+
+              <p id="error"></p>
+              <p id="output"></p>
+
+              <button id="playAgain" style="width: 150px; color: blue">
+                Play Again
+              </button>
+            </div>
+          </div>
+
+          <script src="../JSfiles/Blackjack.js"></script>
+        </div>
+        <footer>&copy; 2023 CIC Gaming Site</footer>
+      </div>
     </body>
   </head>
 </html>

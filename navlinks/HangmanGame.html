@@ -3,19 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <title>Document</title>
     <body>
-      <h1>Hangman Game</h1>
-      <p>Guess the word by selecting letters.</p>
+      <div class="background">
+        <div class="navbar">
+          <a href="../index.html" class="btn"
+            ><i class="fa fa-home"></i> Home</a
+          >
+          <a href="../navlinks/leaderboard.html">Leaderboard</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Games
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+              <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+            </div>
+          </div>
+        </div>
 
-      <div id="game-board">
-        <!-- Your Hangman game board goes here -->
+        <div class="center-content">
+          <h1 class="page-heading">Hangman Game</h1>
+          <h2 class="page-heading2">Guess the word by selecting letters.</h2>
+          <p id="intro-paragraph">
+            Hangman is the classic word-guessing game where you try to figure
+            out a secret word letter by letter. You have a limited number of
+            guesses, and with each incorrect guess, part of a cute stick figure
+            gets closer to, well, hanging. Can you save your new friend by
+            solving the mystery word before it's too late?
+          </p>
+        </div>
+
+        <!-- <script src="../JSfiles/Hangman.js"></script> -->
+        <footer>&copy; 2023 CIC Gaming Site</footer>
       </div>
-
-      <!-- Include your JavaScript for the game -->
-
-      <script src="../JSfiles/Hangman.js"></script>
-      <a href="../index.html">Go back to the main page</a>
     </body>
   </head>
 </html>

@@ -55,10 +55,6 @@ function tieornot(board){
 }
 
 
-
-
-
-
 while(keepPlaying){
     //Display the board
     console.log(' ---------------------- New Board ----------------------');

@@ -3,15 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
     <body>
-      <h1>Rock Paper Scissors</h1>
-      <p>Best out of 5!</p>
+      <div class="background">
+        <div class="navbar">
+          <a href="../index.html" class="btn"
+            ><i class="fa fa-home"></i> Home</a
+          >
+          <a href="../navlinks/leaderboard.html">Leaderboard</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Games
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+              <a href="../navlinks/HangmanGame.html">Hangman</a>
+              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+            </div>
+          </div>
+        </div>
 
-      <div id="game-board"></div>
+        <div class="center-content">
+          <h1 class="page-heading">Rock Paper Scissors</h1>
+          <h2 class="page-heading2">Best out of 5!</h2>
+          <p id="intro-paragraph">
+            Rock beats scissors, scissors cut paper, and paper covers rock. It's
+            the ultimate quick decision-maker! Rock Paper Scissors is a simple
+            game of wits where you challenge a friend or computer to make
+            split-second choices. It's all about outsmarting your opponent with
+            a flick of the wrist and a triumphant shout of "Rock, Paper,
+            Scissors, Shoot!"
+          </p>
+        </div>
 
-      <script src="../JSfiles/RPSGame.js"></script>
-      <a href="../index.html">Go back to the main page</a>
+        <script src="../JSfiles/RPSGame.js"></script>
+        <footer>&copy; 2023 CIC Gaming Site</footer>
+      </div>
     </body>
   </head>
 </html>

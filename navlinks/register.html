@@ -2,25 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=
-    <section id="register">
-      <h2>New CIC Gaming Account</h2>
-      <form>
-        <label for="name">User Name:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="password">Password:</label>
-        <input type="number" id="password" name="password" required />
-
-        <input type="submit" value="Register" />
-      </form>
-    </section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
   </head>
+
   <body>
-    <a href="../index.html">Go back to the main page</a>
+    <div class="background">
+      <div class="navbar">
+        <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+            <a href="../navlinks/HangmanGame.html">Hangman</a>
+            <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+            <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <h1 class="page-heading">New CIC Gaming Account</h1>
+        <form class="New-Account-From">
+          <br />
+
+          <label for="user-name">Username:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter Username"
+            pattern="[A-Za-z]{3,15}"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email Address"
+            pattern="[A-Za-z]{3,15}"
+            required
+          />
+
+          <label for="password">Password:</label>
+          <input
+            type="text"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+
+          <input type="submit" value="Register" />
+        </form>
+      </section>
+      <footer>&copy; 2023 CIC Gaming Site</footer>
+    </div>
   </body>
 </html>

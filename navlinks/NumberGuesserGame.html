@@ -3,15 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <title>Document</title>
-    <body>
-      <h1>Number Guesser Game</h1>
-      <p>Guess A Number!!</p>
-
-      <div id="game-board"></div>
-
-      <script src="../JSfiles/NumGuesser.js "></script>
-      <a href="../index.html">Go back to the main page</a>
-    </body>
   </head>
+  <body>
+    <div class="background">
+      <div class="navbar">
+        <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+            <a href="../navlinks/HangmanGame.html">Hangman</a>
+            <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-content">
+        <h1 class="page-heading">Number Guessing Game</h1>
+        <h2 class="page-heading2">Guess A Number!!</h2>
+        <p id="intro-paragraph">
+          Imagine you're a mind reader, but for numbers! In the Number Guesser
+          Game, you pick a number within a specific range, and the game tries to
+          guess it. You'll provide hints like "too high" or "too low" until the
+          game magically reads your mind and figures out your number. It's like
+          telepathy, but with numbers!
+        </p>
+      </div>
+
+      <div class="center-game">
+        <input
+          type="number"
+          id="userGuess"
+          min="1"
+          max="15"
+          style="width: 150px"
+        />
+        <button id="submitGuess" style="width: 150px; color: blue">
+          Submit Your Guess!
+        </button>
+        <p id="message" style="color: blue"></p>
+        <br />
+        <br />
+        <p id="timer" style="color: blue">
+          Times Remaining: <span id="timeLeft">30</span>
+        </p>
+        <button id="playAgain" style="width: 150px; color: blue">
+          Play Again
+        </button>
+      </div>
+
+      <script src="../JSfiles/NumGuesser.js"></script>
+      <footer>&copy; 2023 CIC Gaming Site</footer>
+    </div>
+  </body>
 </html>
