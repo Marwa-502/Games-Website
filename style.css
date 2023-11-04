@@ -33,25 +33,7 @@ body {
 /************************************/
 
 
-.button {
-    background-color: #4CAF50; 
-    width: 8%;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 88px;
-  }
-
-
-/************************************/
-
-.userinfo {
+.userlogins {
     display: inline;
     float: right;
     font-size: 16px;
@@ -60,19 +42,19 @@ body {
     padding: 14px 16px;
     text-decoration: none;
 }
-.userinfo ul {
+.userlogins ul {
     font-size: larger;
 }
-.userinfo li {
+.userlogins li {
     display: inline; /* lines up the links on one line*/
     margin-right: 20px;
 }
-.userinfo a {
+.userlogins a {
     text-decoration: none; /* Remove underline from links */
     color: #fff;
     font-weight: bold; 
 }
-.userinfo a:hover {
+.userlogins a:hover {
     text-decoration: underline; /* underline links on hover */
     color: purple; /* change text color on hover */
 }
@@ -156,14 +138,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    border: .5px solid #ccc;
     position: relative; 
 }
 .image-box img {  
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
-}
+    object-fit: cover;
+  }
 .overlay { 
     position: absolute;
     bottom: 0;
@@ -260,6 +242,21 @@ body {
 
   
 /************************************/
+
+
+.contact-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;;
+  padding: 10%;
+  margin: 100px auto;
+}
+
+
+
+/************************************/
+
 
 main {
     padding: 20px;

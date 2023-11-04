@@ -8,13 +8,16 @@ const timeLeftElement = document.getElementById("timeLeft");
 
 let interval; // Declare the interval variable
 let numGuesses = 5;
+let win = false
 
 function checkGuess() {
     const playerGuess = parseInt(playerGuessInput.value); // Saving the user's guess
 
     if (playerGuess === randomNum) {
         messageElement.textContent = "Congrats!! You Guessed Right!";
+        win = true
         endGame();
+    
     } else if (numGuesses === 1) {
         messageElement.textContent = `Womp, Womp! You're Out Of Tries! The number was ${randomNum}`;
         endGame();
@@ -39,7 +42,10 @@ function countdown(seconds) {
         } else {
             messageElement.textContent = `TIME'S UP! The correct number was ${randomNum}.`;
             endGame();
-        }  
+        } 
+        if (win || numGuesses <= 1 ){
+            clearInterval(interval);
+        }
     }, 1000);
 }
 

@@ -16,10 +16,11 @@
 
 
 // ****************************************************************** // 
+const output = document.getElementById("output");
+
 document.addEventListener("DOMContentLoaded", function () {
     const playButton = document.getElementById("playButton");
     const playAgainButton = document.getElementById("playAgain");
-    const output = document.getElementById("output");
     const computersPlayLabel = document.getElementById("computersPlayLabel");
     const computersPlay = document.getElementById("computersPlay");
     const playerChoiceInput = document.getElementById("playerChoice");
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         computersPlay.textContent = randomNum;
         totalDisplay.textContent = totals.reduce((acc, curr) => acc + curr, 0);
 
-        output.innerHTML += `Computer random: ${randomNum} - Your choice: ${player} - Total: ${totalDisplay.textContent}<br>`;
+        output.innerHTML = `Computer random: ${randomNum} - Your choice: ${player} - Total: ${totalDisplay.textContent}<br>`;
         playerChoiceInput.value = '';
 
         if (computersPlayLabel.style.display === "none") {
@@ -58,5 +59,5 @@ document.addEventListener("DOMContentLoaded", function () {
             output.innerHTML += "You lose!";
         }
     });
+    playAgainButton.addEventListener("click", () => location.reload());
 });
-playAgainButton.addEventListener("click", () => location.reload());

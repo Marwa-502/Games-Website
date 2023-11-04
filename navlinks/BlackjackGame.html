@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Document</title>
+
     <body>
       <div class="background">
         <div class="navbar">
-          <a href="../index.html">Home</a>
+          <a href="../index.html" class="btn"
+            ><i class="fa fa-home"></i> Home</a
+          >
           <a href="../navlinks/leaderboard.html">Leaderboard</a>
           <div class="dropdown">
             <button class="dropbtn">
@@ -37,15 +44,28 @@
           <div class="center-game-blackjack">
             <div style="color: blue">
               <h3>Roll & Win!</h3>
-              <p>Pick a number between 1 and 5:</p>
+
+              <p>"Roll" a number between 1 - 5:</p>
+
+              <br />
+
               <input type="number" id="playerChoice" min="1" max="5" />
+
               <button id="playButton">Roll Dice</button>
+
               <p id="computersPlayLabel">
                 Computer's Play: <span id="computersPlay"></span>
               </p>
+
+              <br />
+
               <p>Total: <span id="total"></span></p>
+              
+              <br />
+
               <p id="error"></p>
               <p id="output"></p>
+
               <button id="playAgain" style="width: 150px; color: blue">
                 Play Again
               </button>
@@ -54,6 +74,7 @@
 
           <script src="../JSfiles/Blackjack.js"></script>
         </div>
+        <footer>&copy; 2023 CIC Gaming Site</footer>
       </div>
     </body>
   </head>

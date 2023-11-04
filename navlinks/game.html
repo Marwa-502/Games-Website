@@ -15,18 +15,24 @@
       <h1>CIC Mini-Games Portal</h1>
     </div>
 
-    <header>
-      <nav>
-        <div class="navlinks">
-          <ul>
-            <li><a href="./navlinks/home.html">Home</a></li>
-            <li><a href="./navlinks/game.html">Games</a></li>
-            <li><a href="./navlinks/contact.html">Contact</a></li>
-            <li><a href="./navlinks/leaderboard.html">Leaderboard</a></li>
-          </ul>
+    <div class="background">
+      <div class="navbar">
+        <a href="../index.html" class="btn"
+          ><i class="fa fa-home"></i> Home</a
+        >
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+            <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+            <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
 
     <main>
       <nav>
@@ -40,8 +46,8 @@
       </nav>
       <!--- <div class="img-hangman"></div> --->
     </main>
+    <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
 
     <footer>&copy; 2023 Your Gaming Site</footer>
-    <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
   </body>
 </html>

@@ -14,7 +14,7 @@
   <body>
     <div class="background">
       <div class="navbar">
-        <a href="../index.html">Home</a>
+        <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
         <a href="../navlinks/leaderboard.html">Leaderboard</a>
         <div class="dropdown">
           <button class="dropbtn">
@@ -33,16 +33,31 @@
       <section>
         <h1 class="page-heading">Sign In</h1>
         <form class="Account-Form">
+          <br />
+
           <label for="name">email:</label>
-          <input type="text" id="name" name="name" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter Email"
+            pattern="[A-Za-z]{3,15}"
+            required
+          />
 
           <label for="password">Password:</label>
-          <input type="number" id="password" name="password" required />
+          <input
+            type="text"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
 
           <input type="submit" value="Register" />
         </form>
       </section>
-      <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
+      <footer>&copy; 2023 CIC Gaming Site</footer>
     </div>
   </body>
 </html>
