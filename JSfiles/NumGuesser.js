@@ -17,7 +17,7 @@ function checkGuess() {
         messageElement.textContent = "Congrats!! You Guessed Right!";
         win = true
         endGame();
-    
+
     } else if (numGuesses === 1) {
         messageElement.textContent = `Womp, Womp! You're Out Of Tries! The number was ${randomNum}`;
         endGame();
@@ -42,8 +42,8 @@ function countdown(seconds) {
         } else {
             messageElement.textContent = `TIME'S UP! The correct number was ${randomNum}.`;
             endGame();
-        } 
-        if (win || numGuesses <= 1 ){
+        }
+        if (win || numGuesses <= 1) {
             clearInterval(interval);
         }
     }, 1000);
@@ -56,12 +56,10 @@ function startGame() {
     messageElement.textContent = "";
 }
 
-// Button events
 submitGuessButton.addEventListener("click", checkGuess);
 playAgainButton.addEventListener("click", () => location.reload());
 
-// Start the game when the page loads
-countdown(30);
+countdown(30);// Start countdown when page loads
 startGame();
 
 

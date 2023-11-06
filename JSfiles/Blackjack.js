@@ -16,47 +16,41 @@
 
 
 // ****************************************************************** // 
-const output = document.getElementById("output");
+const scoreBoard = document.getElementById("scoreBoard");
 
 document.addEventListener("DOMContentLoaded", function () {
-    const playButton = document.getElementById("playButton");
+    const playButton = document.getElementById("rollButton");
     const playAgainButton = document.getElementById("playAgain");
-    const computersPlayLabel = document.getElementById("computersPlayLabel");
     const computersPlay = document.getElementById("computersPlay");
-    const playerChoiceInput = document.getElementById("playerChoice");
-    const totalDisplay = document.getElementById("total");
-    const errorDisplay = document.getElementById("error");
-    const playerChoices = [];
+    const playerInput = document.getElementById("playerInput");
+    const TryAgainMessage = document.getElementById("error");
     const totals = [];
 
     playButton.addEventListener("click", function () {
-        const player = parseInt(playerChoiceInput.value);
-        if (player < 1 || player > 5) {
-            errorDisplay.textContent = "Please enter a number between 1 and 5.";
+
+        const playerValue = parseInt(playerInput.value);
+        if (playerValue < 1 || playerValue > 5) {
+            TryAgainMessage.textContent = "Please choose a number between 1 - 5.";
             return;
         } else {
-            errorDisplay.textContent = "";
+            TryAgainMessage.textContent = "";
         }
 
-        const randomNum = Math.floor(Math.random() * 5) + 1;
-        playerChoices.push(player);
-        totals.push(player + randomNum);
+        const randomNum = Math.floor(Math.random() * 5) + 1; //randomNum =
+        totals.push(playerValue + randomNum); //playerValue= , randomNum=
+        console.log(totals)
 
-        computersPlay.textContent = randomNum;
-        totalDisplay.textContent = totals.reduce((acc, curr) => acc + curr, 0);
+        computersPlay.textContent = randomNum; //displays computers number after each round
 
-        output.innerHTML = `Computer random: ${randomNum} - Your choice: ${player} - Total: ${totalDisplay.textContent}<br>`;
-        playerChoiceInput.value = '';
+        const playersTotal = totals.reduce((acc, curr) => acc + curr, 0); //  acc is the total and curr is the current element which is being added here, so in each roll, we're adding the current # to the running total.
 
-        if (computersPlayLabel.style.display === "none") {
-            computersPlayLabel.style.display = "block";
-            computersPlay.style.display = "block";
-        }
+        scoreBoard.innerHTML = ` Your choice: ${playerValue}  <br>  Total: ${playersTotal} <br>`;
+        playerInput.value = '';
 
-        if (totalDisplay.textContent == 21) {
-            output.innerHTML += "You won!";
-        } else if (totalDisplay.textContent > 21) {
-            output.innerHTML += "You lose!";
+        if (playersTotal == 21) {
+            scoreBoard.innerHTML += "You won!"; // the += adds up the total and displays it at the end
+        } else if (playersTotal > 21) {
+            scoreBoard.innerHTML += "You lose!"; //the += adds up the total and displays it at the end
         }
     });
     playAgainButton.addEventListener("click", () => location.reload());

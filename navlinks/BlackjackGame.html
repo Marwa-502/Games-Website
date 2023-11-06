@@ -42,34 +42,34 @@
           </p>
 
           <div class="center-game-blackjack">
-            <div style="color: blue">
-              <h3>Roll & Win!</h3>
+            <div style="color: rgb(0, 0, 0)"><strong>
+              <h2>"Lets Roll"</h2>
+              <br>
 
-              <p>"Roll" a number between 1 - 5:</p>
-
-              <br />
-
-              <input type="number" id="playerChoice" min="1" max="5" />
-
-              <button id="playButton">Roll Dice</button>
-
-              <p id="computersPlayLabel">
-                Computer's Play: <span id="computersPlay"></span>
-              </p>
+              <p> Roll Between 1 - 5:</p>
 
               <br />
 
-              <p>Total: <span id="total"></span></p>
+              <input type="number" id="playerInput" min="1" max="100" style="
+              height: 20px;
+              padding-top: 3px;
+              border-top-width: 1px;
+              border-bottom-width: 4px;
+              border-left-width: 1px;
+              border-right-width: 3px;
+          ">
+              <button id="rollButton">Roll Dice</button>
+              <br>
+              <br>
+              <p>Computer's Play: <span id="computersPlay"></span> </p>
+
+              <br />
               
-              <br />
-
               <p id="error"></p>
-              <p id="output"></p>
+              <p id="scoreBoard"></p>
 
-              <button id="playAgain" style="width: 150px; color: blue">
-                Play Again
-              </button>
-            </div>
+              <button id="playAgain" style="width: 150px; color: rgb(0, 0, 0)"> Play Again </button>
+            </strong></div>
           </div>
 
           <script src="../JSfiles/Blackjack.js"></script>
