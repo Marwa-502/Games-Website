@@ -1,3 +1,40 @@
+
+## Mini Games Website
+
+Welcome to my very first games website! This website features a collection of games that I've developed as a beginner. I working on this project alone.
+
+## Games
+
+### 1. Blackjack
+- Description: Try to beat the dealer.
+
+### 2. Number Guesser Game
+- Description: Try to beat the computer and guess the right numnber!
+
+### 3. Hangman (Under Construction)
+- Description: Hangman game is currently under construction and will be available soon. Stay tuned!
+
+### 4. Rock, Paper, Scissors (Under Construction)
+- Description: Rock, Paper, Scissors game is currently under construction and will be available soon. Stay tuned!
+
+## Development
+This project was inspired by CIC. Its one of our group assignments and is a work in progress. I will be connecting with my new team to continuously working on improving and adding new features to the website.
+
+## Feedback
+I appreciate your feedback and suggestions. If you encounter any issues or have ideas for improvements, please don't hesitate to reach out.
+
+
+Thank you for visiting and enjoy playing the available games. Stay tuned for the upcoming Hangman and Rock, Paper, Scissors games.
+
+
+
+*****************************************************************
+Assignment details below:
+*****************************************************************
+
+
+
+
 # Games-Website
 
 ##Mini-Games Website:
