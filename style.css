@@ -1,14 +1,12 @@
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
+/* Global reset */
+* {
   margin: 0;
   padding: 0;
 }
 
+html {
+  font-size: 62.5%; /*setting root font-size to 1 rem = 10px;*/
+}
 
 /************************************/
 body {
@@ -25,14 +23,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./images/background.png");
+  background-image: url('./images/background.png');
   background-size: cover;
   z-index: 1;
-
 }
 
 /************************************/
-
 
 .userlogins {
   display: inline;
@@ -76,8 +72,8 @@ body {
   justify-content: center;
 }
 
-
 /************************************/
+
 .navbar a {
   float: left;
   font-size: 16px;
@@ -156,7 +152,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: .5px solid #ccc;
+  border: 0.5px solid #ccc;
   position: relative;
 }
 
@@ -175,7 +171,7 @@ a {
   overflow: hidden;
   width: 100%;
   height: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,20 +187,16 @@ a {
 .overlay h1 {
   color: white;
   text-align: center;
-
 }
-
-
 
 /************************************/
 /* titles / descriptions */
 .page-heading {
   font-size: 50px;
-  color: black;
+  color: rgb(245, 175, 175);
   text-align: center;
   justify-content: center;
   margin: 50px;
-
 }
 
 .page-heading2 {
@@ -229,7 +221,6 @@ a {
   justify-content: center;
   align-items: center;
   height: 10px;
-  ;
   text-align: center;
   padding: 10px;
 }
@@ -250,7 +241,6 @@ a {
   text-align: center;
 }
 
-
 .center-game-blackjack {
   display: flex;
   justify-content: center;
@@ -260,33 +250,26 @@ a {
   border: 3px solid #000000;
   background-color: #fff419;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 200px auto;
 }
 
-
 /************************************/
-
 
 .contact-form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10px;
-  ;
   padding: 10%;
   margin: 100px auto;
 }
 
-
-
 /************************************/
-
 
 main {
   padding: 20px;
 }
-
 
 footer {
   position: absolute;
@@ -297,20 +280,200 @@ footer {
   padding: 5px;
 }
 
-
-
 /*  screen sizing to make site responsive */
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+}
 
 /* Phones */
 
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
 
 /* Tablets */
 
-
-@media screen and (min-width: 1025px) {}
+@media screen and (min-width: 1025px) {
+}
 
 /* Desktops */
+
+/* Rock Paper Scissors*/
+
+/* .rps-navbar {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+} */
+
+.rps-background {
+  background-image: url('./images/background-landscape.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.page-content {
+  position: relative;
+  max-width: 85%;
+  background-color: rgba(29, 28, 28, 0.683);
+  margin: auto;
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(171, 11, 245);
+}
+
+.exit-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.game-title {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  color: #61c8cb;
+  font-weight: bold;
+}
+
+.game-blurb {
+  display: flex;
+  justify-content: center;
+  color: rgb(248, 182, 97);
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.game-description {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  color: #f8b661;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #61c8cb;
+  padding: 3rem;
+  border-radius: 1rem;
+  height: 40rem;
+}
+
+.choose-weapon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-row: 1 / 4;
+  padding: 1rem 0;
+}
+
+.choose-weapon p {
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(235, 232, 232);
+  padding: 1rem;
+}
+
+.weapon-option {
+  width: 11rem;
+}
+
+.btn-play {
+  grid-column: 3 / 4;
+  width: 12rem;
+  text-align: center;
+  font-size: 3rem;
+  padding: 1rem;
+  border: 0.25rem solid;
+  cursor: pointer;
+}
+
+.match {
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.user-choice,
+.bot-choice {
+  width: 20rem;
+  height: 28rem;
+}
+
+.versus {
+  color: rgb(248, 182, 97);
+  background-color: rgba(29, 28, 28, 0.683);
+  font-size: 5cqb;
+  padding: 0 1rem;
+  border-radius: 1rem;
+}
+
+.score {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.round {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.user-score,
+.bot-score {
+  height: 10rem;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn-reset {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  width: 15rem;
+  font-size: 2rem;
+  color: rgb(235, 232, 232);
+  text-align: center;
+  padding: 1rem;
+  border: 0.25rem solid;
+  cursor: pointer;
+}
+
+.choose-weapon p,
+.btn-play,
+.btn-reset,
+.score,
+.round {
+  border-radius: 1rem;
+  color: rgb(248, 182, 97);
+  background-color: rgba(29, 28, 28, 0.362);
+  font-weight: bold;
+}
