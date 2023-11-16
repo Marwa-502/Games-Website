@@ -33,7 +33,10 @@
         </div>
 
         <div class="page-content">
-          <i class="fa-regular fa-circle-xmark exit-button"></i>
+          <button class="btn-exit">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+          
           <p class="game-title">Rock Paper Scissors</p>
           <br />
 
@@ -56,25 +59,46 @@
               <img class="weapon-option" id="paper" src='../images/paper.png'>
               <img class="weapon-option" id="scissors" src='../images/scissors.png'>
             </section>
-            <div class="btn-play">Play</div>
-            <div class="match">
-              <img class="user-choice" src='../images/user.png'>
+
+            <button class="btn-play">Play</button>
+
+            <section class="match">
+              <div class="tie-display">
+                <p>It's a tie!</p>
+              </div>
+              <div class="user-section">
+                <div class="win-display user-wins">
+                  <p class="win-text">You win this round!</p>
+                  <br />
+                  <img class="confetti" src="../images/confetti.png">
+                </div>
+                <img class="user-choice" src='../images/user.png'>
+              </div>
               <div class="versus">vs</div>
-              <img class="bot-choice" src="../images/bot.png">
-            </div>
+              <div class="bot-section">
+                <div class="win-display bot-wins">
+                  <p class="win-text">Bot wins this round!</p>
+                  <br />
+                  <img class="confetti" src="../images/confetti.png">
+                </div>
+                <img class="bot-choice" src="../images/bot.png">
+              </div>
+              <button class="btn-nextRound">Continue Next Round?</button>
+            </section>
+          
             <button class="btn-reset">Reset Game</button> 
           
             <section class="score">
-              <div class="round">Round 1</div>
+              <div class="round">Round <span class="round-number">1</span></div>
               <div class="user-score">
-                <p>Your score:</p>
-                <br>
-                <p class="user-score-1">0</p>
+                <p class="score-label">Your score:</p>
+                <br/>
+                <p class="score-value user-value">0</p>
               </div>
               <div class="bot-score">
-                <p>Bot score:</p>
-                <br>
-                <p>0</p>
+                <p class="score-label">Bot score:</p>
+                <br/>
+                <p class="score-value bot-value">0</p>
               </div>
             </section>
           </div>

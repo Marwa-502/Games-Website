@@ -1,6 +1,7 @@
 'use strict';
 // Global Variables
-let play, userChoice, botChoice, roundsLeft, userScore, botScore;
+let play, userChoice, botChoice, roundsLeft, userScore, botScore, nextRound;
+let round = 1; // Starting round
 const winRoundPoints = 10; // Points earned if win a round
 const playerOption = ['rock', 'paper', 'scissors'];
 
@@ -11,14 +12,22 @@ const elementWeaponOpt = document.querySelectorAll('.weapon-option');
 const elementUserChoice = document.querySelector('.user-choice');
 const elementBotChoice = document.querySelector('.bot-choice');
 const elementRound = document.querySelector('.round');
-const elementUserScore = document.querySelector('.user-score-1');
-const elementBotScore = document.querySelector('.bot-score');
+const elementRoundNumber = document.querySelector('.round-number');
+const elementUserScore = document.querySelector('.user-value');
+const elementBotScore = document.querySelector('.bot-value');
 const elementBtnReset = document.querySelector('.btn-reset');
+const elementWinDisplay = document.querySelectorAll('.win-display');
+const elementTieDisplay = document.querySelector('.tie-display');
+const elementBtnExit = document.querySelector('.btn-exit');
+const elementUserWins = document.querySelector('.user-wins');
+const elementBotWins = document.querySelector('.bot-wins');
+const elementBtnNextRound = document.querySelector('.btn-nextRound');
 
 // Event handlers
 window.addEventListener('load', init);
 elementBtnPlay.addEventListener('click', playMode); // Change Play to Round, Show reset button and bot choice
 elementBtnReset.addEventListener('click', init);
+elementBtnExit.addEventListener('click', backToHomepage);
 
 // Main functions
 
@@ -36,68 +45,86 @@ function init() {
   getUserChoice();
   hideElement(elementBtnReset);
   hideElement(elementRound);
+  hideWinDisplay();
+  hideElement(elementTieDisplay);
+  hideElement(elementBtnPlay);
+  hideElement(elementBtnNextRound);
 }
 
 function playMode() {
-  while (play) {
+  if (play) {
     showElement(elementBtnReset);
     showElement(elementRound);
+    showElement(elementBtnPlay);
+    hideElement(elementBtnPlay);
 
     while (roundsLeft > 0) {
       botChoice = getBotChoice();
       console.log(botChoice);
 
       // Print the choices
-      displayUserChoice(userChoice);
       displayBotChoice(botChoice);
       if (userChoice === botChoice) {
-        console.log(`It's a tie!`);
+        showElement(elementTieDisplay);
       } else if (
         (userChoice === 'rock' && botChoice === 'scissors') ||
         (userChoice === 'paper' && botChoice === 'rock') ||
         (userChoice === 'scissors' && botChoice === 'paper')
       ) {
-        console.log('You WIN!'); // Display winning message
-        debugger;
+        showElement(elementUserWins); // Display winning message
         userScore = userScore + winRoundPoints;
         console.log(userScore); // Add 10 to userScore
         displayElementContent(elementUserScore, userScore); // Display updated userScore
       } else {
-        //   // Ask user if they want to keep playing
-        //   // Yes - continue
-        //   // No - exit play = false
-        //   // Restart
-        console.log('You LOSE!');
+        showElement(elementBotWins);
         botScore = botScore + winRoundPoints;
+        console.log(botScore);
         displayElementContent(elementBotScore, botScore);
       }
-      roundsLeft--;
-      console.log(roundsLeft);
-    }
 
+      // Ask user if they want to keep playing
+      showElement(elementBtnNextRound);
+      askNextRound();
+
+      if (nextRound === true) {
+        round++;
+        console.log(round);
+        displayElementContent(elementRoundNumber, round);
+        roundsLeft--;
+        console.log(roundsLeft);
+        hideElement(elementBtnNextRound);
+        hideElement(elementWinDisplay);
+      } else {
+        roundsLeft = 0;
+      }
+    }
+  } else {
     if (userScore === botScore) {
-      console.log(`It's a TIE!`);
+      showElement(elementTieDisplay);
     } else
       userScore > botScore
-        ? console.log('You WIN the game!🎉')
-        : console.log('You LOSE the game!🎉');
+        ? displayElementContent(elementRound, 'Congrats you beat the bot! 🎉')
+        : displayElementContent(elementRound, 'Sorry, the bot beats you! 😢');
 
     //   Display Final Score
-    console.log('User score:', userScore);
-    console.log('Bot score:', botScore);
-    // Ask if user wants to play again
-    // const replay = prompt('Do you want to play again? (yes/no)').toLowerCase();
-    // console.log(replay);
+    // console.log('User score:', userScore);
+    // console.log('Bot score:', botScore);
 
-    // if (replay !== 'yes') {
-    //   play = false;
-    // }
+    // Ask if user wants to play again
+    showElement(elementBtnNextRound);
+    displayElementContent(elementBtnNextRound, 'Play Again');
+    askNextRound();
+    console.log(nextRound);
   }
+
+  // if (nextRound !== 'yes') {
+  //   init();
+  // }
 }
 
 // Display element content
 function displayElementContent(elementSelector, text) {
-  document.querySelector(elementSelector).textContent = text;
+  return (elementSelector.textContent = text);
 }
 
 function showElement(elementSelector) {
@@ -127,8 +154,27 @@ function getUserChoice() {
     element.addEventListener('click', function (event) {
       userChoice = event.target.id;
       console.log(userChoice);
+      displayUserChoice(userChoice);
+      displayBotChoice('question-mark');
+      showElement(elementBtnPlay);
     });
   });
 }
 
-function updateRound() {}
+function hideWinDisplay() {
+  elementWinDisplay.forEach(function (element) {
+    element.classList.add('hidden');
+  });
+}
+
+function backToHomepage() {
+  window.location.href = '../index.html';
+}
+
+function askNextRound() {
+  elementBtnNextRound.addEventListener('click', function (event) {
+    nextRound = event.target;
+    console.log(nextRound);
+    return nextRound;
+  });
+}
