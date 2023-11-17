@@ -1,7 +1,15 @@
 'use strict';
 // Global Variables
-let play, userChoice, botChoice, roundsLeft, userScore, botScore, nextRound;
-let round = 1; // Starting round
+let play,
+  userChoice,
+  botChoice,
+  userScore,
+  botScore,
+  round,
+  totalRounds,
+  roundsLeft;
+
+// nextRoundClicked; // Starting round
 const winRoundPoints = 10; // Points earned if win a round
 const playerOption = ['rock', 'paper', 'scissors'];
 
@@ -22,10 +30,19 @@ const elementBtnExit = document.querySelector('.btn-exit');
 const elementUserWins = document.querySelector('.user-wins');
 const elementBotWins = document.querySelector('.bot-wins');
 const elementBtnNextRound = document.querySelector('.btn-nextRound');
+const elementWeaponText = document.querySelector('.weapon-text');
+const elementVersus = document.querySelector('.versus');
+const elementUserText = document.querySelector('.user-text');
+const elementBotText = document.querySelector('.bot-text');
+
+const initialUserWinsText = elementUserText.textContent;
+const initialBotWinsText = elementBotText.textContent;
+const initialBtnResetText = elementBtnReset.textContent;
+const initialTieDisplayText = elementTieDisplay.textContent;
 
 // Event handlers
 window.addEventListener('load', init);
-elementBtnPlay.addEventListener('click', playMode); // Change Play to Round, Show reset button and bot choice
+elementBtnPlay.addEventListener('click', playMode);
 elementBtnReset.addEventListener('click', init);
 elementBtnExit.addEventListener('click', backToHomepage);
 
@@ -34,92 +51,95 @@ elementBtnExit.addEventListener('click', backToHomepage);
 // *Initial state*
 function init() {
   play = true;
+  round = 1;
+  totalRounds = 5;
   roundsLeft = 5;
   userScore = 0;
   botScore = 0;
-  userChoice = 'user';
-  displayUserChoice(userChoice); // to reset user-choice display
-  botChoice = 'bot';
-  displayBotChoice(botChoice);
 
-  getUserChoice();
+  displayElementContent(elementBotScore, botScore);
+  displayElementContent(elementUserScore, userScore);
+  defaultChoice();
+  showElement(elementChooseWeapon);
+
+  resetTextContent();
   hideElement(elementBtnReset);
   hideElement(elementRound);
   hideWinDisplay();
   hideElement(elementTieDisplay);
   hideElement(elementBtnPlay);
-  hideElement(elementBtnNextRound);
+  getUserChoice();
 }
 
 function playMode() {
-  if (play) {
-    showElement(elementBtnReset);
-    showElement(elementRound);
-    showElement(elementBtnPlay);
-    hideElement(elementBtnPlay);
-
-    while (roundsLeft > 0) {
-      botChoice = getBotChoice();
-      console.log(botChoice);
-
-      // Print the choices
-      displayBotChoice(botChoice);
-      if (userChoice === botChoice) {
-        showElement(elementTieDisplay);
-      } else if (
-        (userChoice === 'rock' && botChoice === 'scissors') ||
-        (userChoice === 'paper' && botChoice === 'rock') ||
-        (userChoice === 'scissors' && botChoice === 'paper')
-      ) {
-        showElement(elementUserWins); // Display winning message
-        userScore = userScore + winRoundPoints;
-        console.log(userScore); // Add 10 to userScore
-        displayElementContent(elementUserScore, userScore); // Display updated userScore
-      } else {
-        showElement(elementBotWins);
-        botScore = botScore + winRoundPoints;
-        console.log(botScore);
-        displayElementContent(elementBotScore, botScore);
-      }
-
-      // Ask user if they want to keep playing
-      showElement(elementBtnNextRound);
-      askNextRound();
-
-      if (nextRound === true) {
-        round++;
-        console.log(round);
-        displayElementContent(elementRoundNumber, round);
-        roundsLeft--;
-        console.log(roundsLeft);
-        hideElement(elementBtnNextRound);
-        hideElement(elementWinDisplay);
-      } else {
-        roundsLeft = 0;
-      }
-    }
+  if (play && round < totalRounds) {
+    setUpGameElements();
+    botChoice = getBotChoice();
+    console.log('Bot choice:', botChoice);
+    displayBotChoice(botChoice);
+    handleRound();
+    setTime();
   } else {
-    if (userScore === botScore) {
-      showElement(elementTieDisplay);
-    } else
-      userScore > botScore
-        ? displayElementContent(elementRound, 'Congrats you beat the bot! 🎉')
-        : displayElementContent(elementRound, 'Sorry, the bot beats you! 😢');
-
-    //   Display Final Score
-    // console.log('User score:', userScore);
-    // console.log('Bot score:', botScore);
-
-    // Ask if user wants to play again
-    showElement(elementBtnNextRound);
-    displayElementContent(elementBtnNextRound, 'Play Again');
-    askNextRound();
-    console.log(nextRound);
+    setFinalWinner();
+    gameEnds();
   }
+}
 
-  // if (nextRound !== 'yes') {
-  //   init();
-  // }
+// The game logic per round
+
+function handleRound() {
+  if (userChoice === botChoice) {
+    showElement(elementTieDisplay);
+  } else if (
+    (userChoice === 'rock' && botChoice === 'scissors') ||
+    (userChoice === 'paper' && botChoice === 'rock') ||
+    (userChoice === 'scissors' && botChoice === 'paper')
+  ) {
+    showElement(elementUserWins); // Display winning message
+    userScore = userScore + winRoundPoints;
+    console.log('user score:', userScore); // Add 10 to userScore
+    displayElementContent(elementUserScore, userScore); // Display updated userScore
+  } else {
+    showElement(elementBotWins);
+    botScore = botScore + winRoundPoints;
+    console.log('bot score:', botScore);
+    displayElementContent(elementBotScore, botScore);
+  }
+  hideElement(elementBtnPlay);
+}
+
+// Update round status
+function updateRound() {
+  round++;
+  console.log('Round:', round);
+  displayElementContent(elementRoundNumber, round);
+  roundsLeft--;
+  console.log('Round-left:', roundsLeft);
+  // hideElement(elementBtnNextRound);
+  hideWinDisplay();
+  hideElement(elementTieDisplay);
+  defaultChoice();
+}
+
+// Set final winner
+function setFinalWinner() {
+  if (userScore === botScore) {
+    showElement(elementTieDisplay);
+    displayElementContent(elementTieDisplay, `Even Stevens! It's a tie!`);
+  } else if (userScore > botScore) {
+    showElement(elementUserWins);
+    displayElementContent(elementUserText, 'You beat the bot! 🎉');
+  } else {
+    showElement(elementBotWins);
+    displayElementContent(elementBotText, 'The bot beats you!');
+  }
+  defaultChoice();
+}
+
+function gameEnds() {
+  hideElement(elementBtnPlay);
+  hideElement(elementChooseWeapon);
+  displayElementContent(elementBtnReset, 'Play Again');
 }
 
 // Display element content
@@ -141,24 +161,28 @@ function getBotChoice() {
   return playerOption[randomIndex];
 }
 
+function getUserChoice() {
+  elementWeaponOpt.forEach(function (element) {
+    element.addEventListener('click', function (event) {
+      userChoice = event.target.id;
+      console.log('user choice:', userChoice);
+      showElement(elementBtnPlay);
+      showElement(elementRound);
+      showElement(elementBtnReset);
+      displayUserChoice(userChoice);
+      displayBotChoice('question-mark');
+      hideElement(elementTieDisplay);
+      hideWinDisplay();
+    });
+  });
+}
+
 function displayUserChoice(userChoice) {
   return (elementUserChoice.src = `../images/${userChoice}.png`);
 }
 
 function displayBotChoice(botChoice) {
   return (elementBotChoice.src = `../images/${botChoice}.png`);
-}
-
-function getUserChoice() {
-  elementWeaponOpt.forEach(function (element) {
-    element.addEventListener('click', function (event) {
-      userChoice = event.target.id;
-      console.log(userChoice);
-      displayUserChoice(userChoice);
-      displayBotChoice('question-mark');
-      showElement(elementBtnPlay);
-    });
-  });
 }
 
 function hideWinDisplay() {
@@ -171,10 +195,31 @@ function backToHomepage() {
   window.location.href = '../index.html';
 }
 
-function askNextRound() {
-  elementBtnNextRound.addEventListener('click', function (event) {
-    nextRound = event.target;
-    console.log(nextRound);
-    return nextRound;
-  });
+function setUpGameElements() {
+  showElement(elementBtnReset);
+  showElement(elementRound);
+  showElement(elementBtnPlay);
+}
+
+function setTime() {
+  setTimeout(() => {
+    // hideWinDisplay();
+    // hideElement(elementTieDisplay);
+    updateRound();
+    getUserChoice();
+  }, 2700); // 5000 milliseconds (5 seconds)
+}
+
+function defaultChoice() {
+  userChoice = 'user';
+  displayUserChoice(userChoice);
+  botChoice = 'bot';
+  displayBotChoice(botChoice);
+}
+
+function resetTextContent() {
+  displayElementContent(elementUserText, initialUserWinsText);
+  displayElementContent(elementBotText, initialBotWinsText);
+  displayElementContent(elementBtnReset, initialBtnResetText);
+  displayElementContent(elementTieDisplay, initialTieDisplayText);
 }
