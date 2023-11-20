@@ -1,4 +1,5 @@
 'use strict';
+
 // **Global Variables**
 let play, userChoice, botChoice, userScore, botScore, round, roundsLeft;
 const winRoundPoints = 10; // Points earned if win a round

@@ -4,23 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Mini Games Site</title>
   </head>
 
   <body>
-    <div class="background">
-      <!-- /************************************/ -->
-      <!-- login -->
-
-      <div class="userlogins">
-        <ul>
-          <li><a href="./navlinks/signin.html"> Sign In</a></li>
-          <li><a href="./navlinks/register.html">New User</a></li>
-        </ul>
-      </div>
-
-      <div class="navbar">
-        <a href="../navlinks/contact.html">Contact Us</a>
-        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+    <header>
+      <!-- Navigation Bar -->
+      <nav class="navbar">
         <div class="dropdown">
           <button class="dropbtn">
             Games
@@ -33,8 +27,18 @@
             <a href="./navlinks/RPSgame.html">Rock Paper Scissors</a>
           </div>
         </div>
-      </div>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <a href="../navlinks/contact.html">Contact Us</a>
+      </nav>
 
+      <!-- User Authentication -->
+      <div class="userlogins">
+        <ul>
+          <li><a href="./navlinks/signin.html"> Sign In</a></li>
+          <li><a href="./navlinks/register.html">New User</a></li>
+        </ul>
+      </div>
+    </header>
       <!-- /************************************/ -->
       <main>
         <h1 class="page-heading">Mini Games Site</h1>
@@ -42,8 +46,6 @@
         <!--  game thumbnails in center of page -->
 
         <div class="image-container">
-          <br />
-
           <div class="image-box">
             <div class="overlay">
               <h1>Blackjack</h1>
@@ -83,13 +85,9 @@
           </div>
         </div> -->
       </main>
-
       <!-- /************************************/ -->
       <footer>&copy; 2023 CIC Gaming Site</footer>
-    </div>
+      <!-- /************************************/ -->
+      <script src="./script.js"></script>
   </body>
-
-  <!-- /************************************/ -->
-
-  <script src="./script.js"></script>
 </html>

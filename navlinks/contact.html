@@ -8,69 +8,86 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>Document</title>
+    <title>Contact Us</title>
   </head>
 
   <body>
     <div class="background">
-
-      <div class="background">
-
-        <div class="navbar">
-
-          <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
-          <a href="../navlinks/leaderboard.html">Leaderboard</a>
-
+      <div class="navbar">
+        <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
         <div class="dropdown">
-
-          <button class="dropbtn"> Games <i class="fa fa-caret-down"></i></button>
-
+          <button class="dropbtn">
+            Games <i class="fa fa-caret-down"></i>
+          </button>
           <div class="dropdown-content">
             <a href="../navlinks/BlackjackGame.html">Blackjack</a>
-            <a href="../navlinks/HangmanGame.html">Hangman</a>
+            <!-- <a href="../navlinks/HangmanGame.html">Hangman</a> -->
             <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
             <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
           </div>
-
-          </div>
-
-       </div>
+        </div>
+      </div>
 
       <h1 class="page-heading">Contact Us</h1>
       <h2 class="page-heading2">Please fill out the form below</h2>
-
-      <br />
-
-     <div class="contact-form">    
-
-        <br />
-
-        <form id="contactForm" >  
-          <br />
-
+      <div class="contact-form">
+        <form id="contactForm">
           <div>
-            <label for="fname" style="color: white;"> <strong>First Name: </strong> </label>
-            <input type="text" id="fname" name="fname" placeholder="First name"  required/>
+            <label for="fname" style="color: white">
+              <strong>First Name: </strong>
+            </label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="First name"
+              required
+            />
           </div>
 
           <br />
 
           <div>
-            <label for="lname" style="color: white;" ><strong> Last Name: </strong> </label>
-            <input type="text" id="lname" name="lname" placeholder="Last name" required/>
+            <label for="lname" style="color: white"
+              ><strong> Last Name: </strong>
+            </label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="Last name"
+              required
+            />
           </div>
 
           <br />
           <div>
-            <label for="email" style="color: white;"><strong> Email Address: </strong></label>
-            <input type="email" id="email" name="email" placeholder="Email Address" required/>
+            <label for="email" style="color: white"
+              ><strong> Email Address: </strong></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
           </div>
 
           <br />
           <!-- I grabbed this data list from here: https://jsfiddle.net/Dimcho/LUZvS/   -->
           <div class="datalist-holder">
-            <label for="country" style="color: white;"><strong> Select Your Country: </strong> </label>
-            <input type="text" list="country" name="country" placeholder="Enter Country" class="datalist-input"/>
+            <label for="country" style="color: white"
+              ><strong> Select Your Country: </strong>
+            </label>
+            <input
+              type="text"
+              list="country"
+              name="country"
+              placeholder="Enter Country"
+              class="datalist-input"
+            />
             <datalist id="country">
               <option value="Afghanistan" />
               <option value="Albania" />
@@ -318,20 +335,28 @@
 
           <div>
             <!-- I referenced W3Schools alot to help me with the coding of this form page. For example using the disabled selector https://www.w3schools.com/js/js_validation.asp -->
-            <label for="comment.reason" style="color: white;"> <strong>Reason For Contact: </strong> </label>
+            <label for="comment.reason" style="color: white">
+              <strong>Reason For Contact: </strong>
+            </label>
             <select id="comment.reason" name="comment.reason" required>
-              <option value="" disabled selected> Select Reason</option>
-              <option value="game.request"> Game Request</option>
-              <option value="report.issues"> Report An Issue</option>
-              <option value="kudos"> Kudos To The Team</option>        
-              <option value="other"> Other</option>
-          </select>
+              <option value="" disabled selected>Select Reason</option>
+              <option value="game.request">Game Request</option>
+              <option value="report.issues">Report An Issue</option>
+              <option value="kudos">Kudos To The Team</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
-          <br>
+          <br />
 
           <div>
-            <textarea rows="10" cols="60" name="comment" placeholder="Enter your comments here" required></textarea>
+            <textarea
+              rows="10"
+              cols="60"
+              name="comment"
+              placeholder="Enter your comments here"
+              required
+            ></textarea>
           </div>
 
           <div>
@@ -341,10 +366,9 @@
           <br />
         </form>
       </div>
-
     </div>
-
-    <script src="../script.js"></script> <!-- <<<<<<------ my form validation is in here -->
     <footer>&copy; 2023 CIC Gaming Site</footer>
+    <!-- <<<<<<------ my form validation is in here -->
+    <script src="../script.js"></script>
   </body>
 </html>
