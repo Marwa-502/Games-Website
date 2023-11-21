@@ -170,12 +170,12 @@ function displayElementContent(elementSelector, text) {
   return (elementSelector.textContent = text);
 }
 
-// Generic function to remove class
+// Generic function to remove hidden class - showing element
 function showElement(elementSelector) {
   return elementSelector.classList.remove('hidden');
 }
 
-// Generic function to hide class
+// Generic function to add hidden class - hiding element
 function hideElement(elementSelector) {
   return elementSelector.classList.add('hidden');
 }

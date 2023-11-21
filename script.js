@@ -2,7 +2,15 @@
 
 // **Contact Us form**
 
+// Global variable
 let contactForm = document.getElementById('contactForm');
+
+// Element selector
+const elementContactUs = document.querySelector('.contact-us');
+const elementThankyouMessage = document.querySelector('.thankyou-message');
+
+// Event handler
+contactForm.addEventListener('submit', onFormSubmit);
 
 function validateForm() {
   let firstName = document.getElementById('fname').value;
@@ -36,7 +44,33 @@ function validateForm() {
   return true;
 }
 
-contactForm.addEventListener('submit', validateForm);
+// Generic function to remove hidden class - showing element
+function showElement(elementSelector) {
+  return elementSelector.classList.remove('hidden');
+}
+
+// Generic function to add hidden class - hiding element
+function hideElement(elementSelector) {
+  return elementSelector.classList.add('hidden');
+}
+
+function onFormSubmit(e) {
+  e.preventDefault();
+  validateForm();
+  if (validateForm()) {
+    showElement(elementThankyouMessage);
+    console.log(elementThankyouMessage);
+    hideElement(elementContactUs);
+  }
+}
+
+//
+
+const elementBtnExit = document.querySelector('.btn-exit');
+elementBtnExit.addEventListener('click', backToHomepage);
+function backToHomepage() {
+  window.location.href = '../index.html';
+}
 
 // contactForm.addEventListener('submit', function (e) {
 //   if (validateForm()) {

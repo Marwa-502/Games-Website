@@ -25,6 +25,19 @@ body {
   /* z-index: 1; */
 }
 
+main {
+  padding: 20px;
+}
+
+footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
 /************************************/
 
 header {
@@ -213,14 +226,14 @@ a {
   max-width: 55%;
 }
 
-.page-heading2 {
+/* .page-heading2 {
   font-size: 30px;
   color: black;
   text-align: center;
   justify-content: center;
-}
+} */
 
-#intro-paragraph {
+/* #intro-paragraph {
   font-size: 18px;
   color: black;
   text-align: center;
@@ -228,7 +241,7 @@ a {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .center-content {
   flex-direction: column;
@@ -251,7 +264,7 @@ a {
   background-color: #fff419;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 400px auto;
+  margin: 4 rem auto;
   text-align: center;
 }
 
@@ -271,53 +284,32 @@ a {
 /************************************/
 
 .contact-form {
+  margin: 2rem auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact-us {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   align-items: center;
-  height: 10px;
-  padding: 10%;
-  margin: 100px auto;
 }
 
-/************************************/
-
-main {
-  padding: 20px;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: white;
+.thankyou-message {
+  font-size: 2.5rem;
+  width: 50rem;
+  color: #f8b661;
   text-align: center;
-  padding: 5px;
+  padding: 3rem;
 }
 
-/*  screen sizing to make site responsive */
+/*************************************/
 
-@media screen and (max-width: 768px) {
-}
-
-/* Phones */
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-}
-
-/* Tablets */
-
-@media screen and (min-width: 1025px) {
-}
-
-/* Desktops */
-
-/* Rock Paper Scissors*/
-
-/* .rps-navbar {
-  display: flex;
-  width: 100%;
-  margin-bottom: 20px;
-} */
+/* All game page settings*/
 
 .page-content {
   display: flex;
@@ -326,17 +318,12 @@ footer {
   gap: 1rem;
   align-items: center;
   position: relative;
-  max-width: 85%;
+  max-width: 80%;
   background-color: rgba(29, 28, 28, 0.683);
   margin: auto;
   padding: 3rem;
   border-radius: 2rem;
   border: 0.1rem solid rgb(171, 11, 245);
-}
-
-.page-content h1 h2 p {
-  display: inline-block;
-  margin-bottom: 2rem;
 }
 
 .btn-exit {
@@ -348,7 +335,8 @@ footer {
   background-color: transparent;
 }
 
-.game-title {
+.game-title,
+.contactUs-title {
   font-size: 4rem;
   color: #61c8cb;
   font-weight: bold;
@@ -360,13 +348,18 @@ footer {
   font-size: 3rem;
 }
 
-.game-description {
+.game-description,
+.contactUs-description {
   max-width: 75%;
   color: #f8b661;
   margin-bottom: 2rem;
   text-align: center;
   font-size: 1.75rem;
 }
+
+/*****************************/
+
+/* Rock Paper Scissors*/
 
 .game-container {
   display: grid;
@@ -399,7 +392,7 @@ footer {
 }
 
 .weapon-option {
-  width: 11rem;
+  max-width: 11rem;
 }
 
 .weapon-option:hover {
@@ -438,7 +431,7 @@ footer {
   top: -12rem;
   background-color: #fff;
   padding: 1rem;
-  width: 2rem;
+  width: 13rem;
 }
 
 .confetti {
@@ -532,4 +525,25 @@ footer {
   color: rgb(248, 182, 97);
   background-color: rgba(29, 28, 28, 0.362);
   font-weight: bold;
+}
+
+/***************************************/
+
+/*Below 1400px*/
+@media (max-width: 87.5em) {
+  .match {
+    gap: 2.5rem;
+    width: 50%;
+  }
+}
+
+/* Below 740px*/
+@media (max-width: 46.25em) {
+  header {
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
+  nav {
+    align-items: start;
+  }
 }
