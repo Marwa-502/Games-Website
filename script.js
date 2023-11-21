@@ -4,6 +4,7 @@
 
 // Global variable
 let contactForm = document.getElementById('contactForm');
+let firstName, lastName, email;
 
 // Element selector
 const elementContactUs = document.querySelector('.contact-us');
@@ -13,9 +14,9 @@ const elementThankyouMessage = document.querySelector('.thankyou-message');
 contactForm.addEventListener('submit', onFormSubmit);
 
 function validateForm() {
-  let firstName = document.getElementById('fname').value;
-  let lastName = document.getElementById('lname').value;
-  let email = document.getElementById('email').value;
+  firstName = document.getElementById('fname').value;
+  lastName = document.getElementById('lname').value;
+  email = document.getElementById('email').value;
 
   const namePattern = /^[a-zA-Z]+$/;
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; // I got this regex pattern from a tutorial https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
@@ -58,19 +59,13 @@ function onFormSubmit(e) {
   e.preventDefault();
   validateForm();
   if (validateForm()) {
+    elementThankyouMessage.textContent = `Thank you for contacting us, ${firstName}! Our team will reach out soon. 😊`;
     showElement(elementThankyouMessage);
-    console.log(elementThankyouMessage);
     hideElement(elementContactUs);
   }
 }
 
 //
-
-const elementBtnExit = document.querySelector('.btn-exit');
-elementBtnExit.addEventListener('click', backToHomepage);
-function backToHomepage() {
-  window.location.href = '../index.html';
-}
 
 // contactForm.addEventListener('submit', function (e) {
 //   if (validateForm()) {
