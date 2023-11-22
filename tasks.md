@@ -6,9 +6,9 @@ Novita's contribution to Marwa's Mini-Games Website post-development.
 
 **Global**
 
-- [ ] Add Rock Paper Scissors game
-- [ ] Add responsivity for screen below below 1370px up to 640px
-- [ ] Add site `<title>` to all pages
+- [x] Add Rock Paper Scissors game
+- [x] Add responsivity for screen below below 1370px up to 640px
+- [x] Add site `<title>` to all pages
 
 **Contact Us Page**
 
