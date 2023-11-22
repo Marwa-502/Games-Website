@@ -12,11 +12,7 @@ Welcome to my very first games website! This website features a collection of ga
 
 - Description: Try to beat the computer and guess the right numnber!
 
-### 3. Hangman (Under Construction)
-
-- Description: Hangman game is currently under construction and will be available soon. Stay tuned!
-
-### 4. Rock, Paper, Scissors (Under Construction)
+### 3. Rock, Paper, Scissors
 
 - Description: Simple game of Rock Paper Scissors where you have 5 chances to beat the computer.
 

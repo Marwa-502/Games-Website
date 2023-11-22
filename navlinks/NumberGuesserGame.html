@@ -8,14 +8,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Number Guessing</title>
   </head>
   <body>
-    <div class="background">
-      <div class="navbar">
+    <header>
+      <nav class="navbar">
         <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
-        <a href="../navlinks/leaderboard.html">Leaderboard</a>
         <div class="dropdown">
           <button class="dropbtn">
             Games
@@ -23,29 +22,35 @@
           </button>
           <div class="dropdown-content">
             <a href="../navlinks/BlackjackGame.html">Blackjack</a>
-            <a href="../navlinks/HangmanGame.html">Hangman</a>
+            <!-- <a href="../navlinks/HangmanGame.html">Hangman</a> -->
             <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
           </div>
-        </div>
-      </div>
+        <!-- <a href="../navlinks/leaderboard.html">Leaderboard</a> -->
+        <a href="../navlinks/contact.html">Contact Us</a>
+        </nav>
+    </header>
 
-      <div class="center-content">
-        <h1 class="page-heading">Number Guessing Game</h1>
-        <h2 class="page-heading2">Guess A Number!!</h2>
-        <p id="intro-paragraph">
-          Imagine you're a mind reader, but for numbers! In the Number Guesser
-          Game, you pick a number within a specific range, and the game tries to
-          guess it. You'll provide hints like "too high" or "too low" until the
-          game magically reads your mind and figures out your number. It's like
-          telepathy, but with numbers!
-        </p>
-      </div>
+    <div class="page-content">
+      <button class="btn-exit">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </button>
 
+      <h1 class="game-title">Number Guessing Game<h1>
+      <h2 class="game-blurb">Guess A Number!!</h2>
+
+      <p class="game-description">
+        Imagine you're a mind reader, but for numbers! In the Number Guesser
+        Game, you pick a number within a specific range, and the game tries to
+        <!-- guess it. You'll provide hints like "too high" or "too low" until the
+        game magically reads your mind and figures out your number. It's like -->
+        telepathy, but with numbers!
+      </p>
+    
       <div class="center-game">
         <p> <b>Pick any number between 1-10</p>
           <p>You have 5 Chances</p>
           <p>30 Seconds on the Clock! </p>
-         <p> GO!!</p>
+        <p> GO!!</p>
           <br>
 
         <input
@@ -70,9 +75,8 @@
           Play Again
         </button>
       </div>
-
-      <script src="../JSfiles/NumGuesser.js"></script>
-      <footer>&copy; 2023 CIC Gaming Site</footer>
     </div>
+    <footer>&copy; 2023 CIC Gaming Site</footer>
+    <script src="../JSfiles/NumGuesser.js"></script>
   </body>
 </html>
