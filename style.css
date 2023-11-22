@@ -375,7 +375,7 @@ a {
 /* Rock Paper Scissors*/
 
 .game-container {
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -564,7 +564,7 @@ a {
 @media (max-width: 85.6em) {
   .game-container {
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
   }
 
   .match {
@@ -615,6 +615,10 @@ a {
 
   .btn-exit {
     font-size: 2rem;
+  }
+
+  .page-content {
+    padding: 1.5rem;
   }
 
   .game-title {
@@ -683,5 +687,9 @@ a {
 
   .confetti {
     display: none;
+  }
+
+  footer {
+    font-size: 1rem;
   }
 }
