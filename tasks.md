@@ -2,6 +2,8 @@
 
 Novita's contribution to Marwa's Mini-Games Website post-development.
 
+-----------------------------------------------------
+
 ### Additional Features/Items:
 
 **Global**
@@ -13,11 +15,13 @@ Novita's contribution to Marwa's Mini-Games Website post-development.
 **Contact Us Page**
 
 - [x] Add validation to Contact form to Ensure that the name only contains alphabets and that the email is a valid email address using JavaScript validation
-- [x] Add thank you message popup function. When the user presses "submit" the form will be replaced with a thank you message letting the user know that their request has been received. This message shoul include the user's name.
+- [x] Add thank you message popup function. When the user presses "submit" the form will be replaced with a thank you message letting the user know that their request has been received. This message should include the user's name.
+
+------------------------------------------------
 
 ### Updates:
 
-- [x] Update the window alert into a modal for contact form Thank you message
+- [x] Remove the window alert Thank you message
 
 - [x] Update the html structure for all pages
 
@@ -48,3 +52,7 @@ Novita's contribution to Marwa's Mini-Games Website post-development.
 **Number Guessing Game**
 
 - [x] Update instructions to reflect the game more accurately. Remove "You'll provide hints like "too high" or "too low" until the game magically reads your mind and figures out your number." since the feature is not available yet.
+
+
+
+
