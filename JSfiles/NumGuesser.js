@@ -1,68 +1,72 @@
-
-const playerGuessInput = document.getElementById("userGuess");
-const submitGuessButton = document.getElementById("submitGuess");
-const messageElement = document.getElementById("message");
-const playAgainButton = document.getElementById("playAgain");
-const timerElement = document.getElementById("timer");
-const timeLeftElement = document.getElementById("timeLeft");
+const playerGuessInput = document.getElementById('userGuess');
+const submitGuessButton = document.getElementById('submitGuess');
+const messageElement = document.getElementById('message');
+const playAgainButton = document.getElementById('playAgain');
+const timerElement = document.getElementById('timer');
+const timeLeftElement = document.getElementById('timeLeft');
+const elementBtnExit = document.querySelector('.btn-exit');
 
 let interval; // Declare the interval variable
 let numGuesses = 5;
-let win = false
+let win = false;
 
 function checkGuess() {
-    const playerGuess = parseInt(playerGuessInput.value); // Saving the user's guess
+  const playerGuess = parseInt(playerGuessInput.value); // Saving the user's guess
 
-    if (playerGuess === randomNum) {
-        messageElement.textContent = "Congrats!! You Guessed Right!";
-        win = true
-        endGame();
-
-    } else if (numGuesses === 1) {
-        messageElement.textContent = `Womp, Womp! You're Out Of Tries! The number was ${randomNum}`;
-        endGame();
-    } else {
-        messageElement.textContent = `Wrong! Try Again. You have ${numGuesses - 1} Guesses Left!`;
-        numGuesses--;
-    }
-    playerGuessInput.value = "";
+  if (playerGuess === randomNum) {
+    messageElement.textContent = 'Congrats!! You Guessed Right!';
+    win = true;
+    endGame();
+  } else if (numGuesses === 1) {
+    messageElement.textContent = `Womp, Womp! You're Out Of Tries! The number was ${randomNum}`;
+    endGame();
+  } else {
+    messageElement.textContent = `Wrong! Try Again. You have ${
+      numGuesses - 1
+    } Guesses Left!`;
+    numGuesses--;
+  }
+  playerGuessInput.value = '';
 }
 
 function endGame() {
-    submitGuessButton.disabled = true;
+  submitGuessButton.disabled = true;
 }
 
 function countdown(seconds) {
-    let counter = seconds;
+  let counter = seconds;
 
-    interval = setInterval(() => {
-        if (counter > 0) {
-            counter--;
-            timeLeftElement.textContent = counter;
-        } else {
-            messageElement.textContent = `TIME'S UP! The correct number was ${randomNum}.`;
-            endGame();
-        }
-        if (win || numGuesses <= 1) {
-            clearInterval(interval);
-        }
-    }, 1000);
+  interval = setInterval(() => {
+    if (counter > 0) {
+      counter--;
+      timeLeftElement.textContent = counter;
+    } else {
+      messageElement.textContent = `TIME'S UP! The correct number was ${randomNum}.`;
+      endGame();
+    }
+    if (win || numGuesses <= 1) {
+      clearInterval(interval);
+    }
+  }, 1000);
 }
 
 function startGame() {
-    numGuesses = 5;
-    randomNum = Math.floor(Math.random() * 10);
-    submitGuessButton.disabled = false;
-    messageElement.textContent = "";
+  numGuesses = 5;
+  randomNum = Math.floor(Math.random() * 10);
+  submitGuessButton.disabled = false;
+  messageElement.textContent = '';
 }
 
-submitGuessButton.addEventListener("click", checkGuess);
-playAgainButton.addEventListener("click", () => location.reload());
+function backToHomepage() {
+  window.location.href = '../index.html';
+}
 
-countdown(30);// Start countdown when page loads
+submitGuessButton.addEventListener('click', checkGuess);
+playAgainButton.addEventListener('click', () => location.reload());
+elementBtnExit.addEventListener('click', backToHomepage);
+
+countdown(30); // Start countdown when page loads
 startGame();
-
-
 
 // const prompt = require('prompt-sync')();
 

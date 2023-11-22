@@ -8,74 +8,90 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Black Jack</title>
+  </head>
 
-    <body>
-      <div class="background">
-        <div class="navbar">
-          <a href="../index.html" class="btn"
-            ><i class="fa fa-home"></i> Home</a
-          >
-          <a href="../navlinks/leaderboard.html">Leaderboard</a>
-          <div class="dropdown">
-            <button class="dropbtn">
-              Games
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
-              <a href="../navlinks/HangmanGame.html">Hangman</a>
-              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
-              <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
-            </div>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="btn"><i class="fa fa-home"></i> Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Games
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <!-- <a href="../navlinks/HangmanGame.html">Hangman</a> -->
+            <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+            <a href="../navlinks/RPSgame.html">Rock Paper Scissors</a>
           </div>
         </div>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <a href="../navlinks/contact.html">Contact Us</a>
+      </nav>
+    </header>
 
-        <div class="center-content">
-          <h1 class="page-heading">Blackjack</h1>
-          <h2 class="page-heading2">Can You Get To 21?</h2>
-          <p id="intro-paragraph">
-            Blackjack is like a fancy card game where you aim to get as close to
-            21 points as possible without going over. It's a bit like
-            challenging the dealer to a high-stakes game of "who's closer to
-            cool." Just don't push your luck too far, or you might go bust!
-          </p>
+    <div class="page-content">
+        <button class="btn-exit">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </button>
 
-          <div class="center-game-blackjack">
-            <div style="color: rgb(0, 0, 0)"><strong>
+        <h1 class="game-title">Blackjack</h1>
+        <h2 class="game-blurb">Can You Get To 21?</h2>
+        
+        <p class="game-description">
+          Blackjack is like a fancy card game where you aim to get as close to
+          21 points as possible without going over. It's a bit like challenging
+          the dealer to a high-stakes game of "who's closer to cool." Just don't
+          push your luck too far, or you might go bust!
+        </p>
+
+        <div class="center-game-blackjack">
+          <div style="color: rgb(0, 0, 0)">
+            <strong>
               <h2>"Lets Roll"</h2>
-              <br>
+              <br />
 
-              <p> Roll Between 1 - 5:</p>
+              <p>Roll Between 1 - 5:</p>
 
               <br />
 
-              <input type="number" id="playerInput" min="1" max="100" style="
-              height: 20px;
-              padding-top: 3px;
-              border-top-width: 1px;
-              border-bottom-width: 4px;
-              border-left-width: 1px;
-              border-right-width: 3px;
-          ">
+              <input
+                type="number"
+                id="playerInput"
+                min="1"
+                max="100"
+                style="
+                  height: 20px;
+                  padding-top: 3px;
+                  border-top-width: 1px;
+                  border-bottom-width: 4px;
+                  border-left-width: 1px;
+                  border-right-width: 3px;
+                "
+              />
               <button id="rollButton">Roll Dice</button>
-              <br>
-              <br>
-              <p>Computer's Play: <span id="computersPlay"></span> </p>
+              <br />
+              <br />
+              <p>Computer's Play: <span id="computersPlay"></span></p>
 
               <br />
-              
+
               <p id="error"></p>
               <p id="scoreBoard"></p>
 
-              <button id="playAgain" style="width: 150px; color: rgb(0, 0, 0)"> Play Again </button>
-            </strong></div>
+              <button id="playAgain" style="width: 150px; color: rgb(0, 0, 0)">
+                Play Again
+              </button>
+            </strong>
           </div>
-
-          <script src="../JSfiles/Blackjack.js"></script>
         </div>
-        <footer>&copy; 2023 CIC Gaming Site</footer>
+
+        
       </div>
-    </body>
-  </head>
+      <footer>&copy; 2023 CIC Gaming Site</footer>
+      <script src="../JSfiles/Blackjack.js"></script>
+    </div>
+  </body>
 </html>
