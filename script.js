@@ -45,16 +45,6 @@ function validateForm() {
   return true;
 }
 
-// Generic function to remove hidden class - showing element
-function showElement(elementSelector) {
-  return elementSelector.classList.remove('hidden');
-}
-
-// Generic function to add hidden class - hiding element
-function hideElement(elementSelector) {
-  return elementSelector.classList.add('hidden');
-}
-
 function onFormSubmit(e) {
   e.preventDefault();
   validateForm();
@@ -63,6 +53,16 @@ function onFormSubmit(e) {
     showElement(elementThankyouMessage);
     hideElement(elementContactUs);
   }
+}
+
+// Generic function to remove hidden class - showing element
+function showElement(elementSelector) {
+  return elementSelector.classList.remove('hidden');
+}
+
+// Generic function to add hidden class - hiding element
+function hideElement(elementSelector) {
+  return elementSelector.classList.add('hidden');
 }
 
 //

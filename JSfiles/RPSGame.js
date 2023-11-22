@@ -1,19 +1,13 @@
 'use strict';
 
-// **Global Variables**
+//------------------------------------- ** Global Variables ** -----------------------------------------//
 let play, userChoice, botChoice, userScore, botScore, round, roundsLeft;
 const winRoundPoints = 10; // Points earned if win a round
 const playerOption = ['rock', 'paper', 'scissors'];
 const totalRounds = 5;
 let userHasStartedGame = false;
 
-//
-// init (only called at the very beginning, separate function round === 0)
-// update (call on update of the round)
-// reset (call only when you click reset)
-//
-
-// **Element Selectors**
+//-------------------------------------** Element Selectors ** -----------------------------------------//
 const elementBtnPlay = document.querySelector('.btn-play');
 const elementChooseWeapon = document.querySelector('.choose-weapon');
 const elementWeaponOption = document.querySelectorAll('.weapon-option');
@@ -41,7 +35,7 @@ const initialBtnResetText = elementBtnReset.textContent;
 const initialTieDisplayText = elementTieDisplay.textContent;
 const initialRoundText = elementRoundNumber.textContent;
 
-// **Event handlers**
+//-----------------------------------------** Event handlers **-----------------------------------------//
 window.addEventListener('load', init);
 
 function initEventListeners() {
@@ -54,7 +48,7 @@ function initEventListeners() {
   });
 }
 
-// **Main functions**
+//-------------------------------------** Main functions **--------------------------------------------------//
 
 // Initial state
 function init() {
@@ -95,24 +89,64 @@ function onPlayClick() {
   if (round <= totalRounds) {
     setUpGameElements();
     botChoice = getBotChoice();
-    console.log('Bot chose:', botChoice);
     displayBotChoice(botChoice);
     handleRound();
     setTime();
   }
 }
 
-// **Functions inside main functions**
+//----------------------------------- ** Functions inside Initial & Reset state **------------------------------------//
 
-// When choosing a weapon
-function onWeaponChoiceClick(event) {
-  if (!userHasStartedGame) {
-    showElement(elementRound);
-    userHasStartedGame = true;
-  }
+// To show some elements in initial state
+function setInitElements() {
+  showElement(elementBtnPlay);
+  showElement(elementBtnReset);
+  displayUserChoice(userChoice);
+  displayBotChoice('question-mark');
+}
 
-  userChoice = event.target.id;
-  setInitElements();
+// To hide elements in initial state
+function initHideElements() {
+  hideElement(elementBtnReset);
+  hideElement(elementRound);
+  hideWinDisplay();
+  hideElement(elementTieDisplay);
+  hideElement(elementBtnPlay);
+}
+
+// To reset player display to initial state
+function initPlayersDisplay() {
+  userChoice = 'user';
+  displayUserChoice(userChoice);
+  botChoice = 'bot';
+  displayBotChoice(botChoice);
+}
+
+// To reset text in User & Bot win, Reset button, Tie display, and round number to initial state
+function resetTextContent() {
+  displayElementContent(elementUserText, initialUserWinsText);
+  displayElementContent(elementBotText, initialBotWinsText);
+  displayElementContent(elementBtnReset, initialBtnResetText);
+  displayElementContent(elementTieDisplay, initialTieDisplayText);
+  displayElementContent(elementRoundNumber, initialRoundText);
+}
+
+//-----------------------------------------------Functions inside onPlayClick----------------------------------//
+
+// To show some elements on Play click
+function setUpGameElements() {
+  showElement(elementBtnReset);
+  showElement(elementRound);
+}
+
+// Generate random bot choice
+function getBotChoice() {
+  const randomIndex = Math.floor(Math.random() * playerOption.length);
+  return playerOption[randomIndex];
+}
+
+function displayBotChoice(botChoice) {
+  return (elementBotChoice.src = `../images/${botChoice}.png`);
 }
 
 // Game logic per round
@@ -137,14 +171,32 @@ function handleRound() {
   hideElement(elementBtnPlay);
 }
 
-// Update round status
+// To clear the winning/tie display after each round and reset players display after every round (within 2.7 seconds),and asses the final winner after 5 rounds
+function setTime() {
+  setTimeout(() => {
+    initPlayersDisplay();
+    displayElementContent(elementRoundNumber, round);
+
+    hideWinDisplay();
+    hideElement(elementTieDisplay);
+
+    if (round === totalRounds) {
+      setFinalWinner();
+      gameEnds();
+    } else {
+      updateRound();
+    }
+  }, 2700);
+}
+
+// Update round number and display it
 function updateRound() {
   round++;
   roundsLeft--;
   displayElementContent(elementRoundNumber, round);
 }
 
-// Set final winner
+// Set final winner after 5 rounds
 function setFinalWinner() {
   if (userScore === botScore) {
     showElement(elementTieDisplay);
@@ -161,39 +213,16 @@ function setFinalWinner() {
 function gameEnds() {
   hideElement(elementBtnPlay);
   hideElement(elementChooseWeapon);
-  // hideElement(elementRound);
   displayElementContent(elementBtnReset, 'Play Again');
 }
 
-// Generic function to display text content
-function displayElementContent(elementSelector, text) {
-  return (elementSelector.textContent = text);
-}
-
-// Generic function to remove hidden class - showing element
-function showElement(elementSelector) {
-  return elementSelector.classList.remove('hidden');
-}
-
-// Generic function to add hidden class - hiding element
-function hideElement(elementSelector) {
-  return elementSelector.classList.add('hidden');
-}
-
-// Generate random bot choice
-function getBotChoice() {
-  const randomIndex = Math.floor(Math.random() * playerOption.length);
-  return playerOption[randomIndex];
-}
+//------------------------------------------Functions used in multiple places-----------------------------------//
 
 function displayUserChoice(userChoice) {
   return (elementUserChoice.src = `../images/${userChoice}.png`);
 }
 
-function displayBotChoice(botChoice) {
-  return (elementBotChoice.src = `../images/${botChoice}.png`);
-}
-
+// Hide winning display for on both user and bot section
 function hideWinDisplay() {
   elementWinDisplay.forEach(function (element) {
     element.classList.add('hidden');
@@ -204,64 +233,30 @@ function backToHomepage() {
   window.location.href = '../index.html';
 }
 
-function setUpGameElements() {
-  showElement(elementBtnReset);
-  showElement(elementRound);
-  console.log('Element round:', round);
+// Template function to display text content
+function displayElementContent(elementSelector, text) {
+  return (elementSelector.textContent = text);
 }
 
-function setInitElements() {
-  showElement(elementBtnPlay);
-  showElement(elementBtnReset);
-  displayUserChoice(userChoice);
-  displayBotChoice('question-mark');
+// Template function to remove hidden class - showing element
+function showElement(elementSelector) {
+  return elementSelector.classList.remove('hidden');
 }
 
-function initHideElements() {
-  hideElement(elementBtnReset);
-  hideElement(elementRound);
-  hideWinDisplay();
-  hideElement(elementTieDisplay);
-  hideElement(elementBtnPlay);
+// Template function to add hidden class - hiding element
+function hideElement(elementSelector) {
+  return elementSelector.classList.add('hidden');
 }
 
-function setTime() {
-  // query element and set disabled = true (SEPARATE NOTE: in the css you set button:disabled pseudo element styling)
-  // toggleWeaponOptionDisabled(true);
-  setTimeout(() => {
-    // toggleWeaponOptionDisabled(false);
+//--------------------------------------------------Functions used in event listener-----------------------------//
 
-    // query element and set disabled = false
-    initPlayersDisplay();
-    displayElementContent(elementRoundNumber, round);
+// When choosing weapon
+function onWeaponChoiceClick(event) {
+  if (!userHasStartedGame) {
+    showElement(elementRound);
+    userHasStartedGame = true;
+  }
 
-    hideWinDisplay();
-    hideElement(elementTieDisplay);
-
-    if (round === totalRounds) {
-      setFinalWinner();
-      gameEnds();
-    } else {
-      updateRound();
-    }
-  }, 2700);
-}
-
-function toggleWeaponOptionDisabled(value) {
-  weaponsOpt.forEach((element) => (element.disabled = value));
-}
-
-function initPlayersDisplay() {
-  userChoice = 'user';
-  displayUserChoice(userChoice);
-  botChoice = 'bot';
-  displayBotChoice(botChoice);
-}
-
-function resetTextContent() {
-  displayElementContent(elementUserText, initialUserWinsText);
-  displayElementContent(elementBotText, initialBotWinsText);
-  displayElementContent(elementBtnReset, initialBtnResetText);
-  displayElementContent(elementTieDisplay, initialTieDisplayText);
-  displayElementContent(elementRoundNumber, initialRoundText);
+  userChoice = event.target.id;
+  setInitElements();
 }

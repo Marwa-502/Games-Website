@@ -2,16 +2,19 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* To set flexbox to account padding on the total width and height*/
 }
 
 html {
   font-size: 62.5%; /*setting root font-size to 1 rem = 10px;*/
+  width: 100%;
 }
 
 /************************************/
 body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.6rem;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,8 +32,15 @@ main {
   padding: 20px;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
 footer {
-  /* position: absolute; */
+  position: absolute;
   bottom: 0;
   width: 100%;
   color: white;
@@ -39,13 +49,7 @@ footer {
 }
 
 /************************************/
-
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
-}
+/* Navigation bar*/
 
 nav {
   display: flex;
@@ -116,6 +120,7 @@ a {
 }
 
 /************************************/
+/* User Authentication*/
 
 .userlogins {
   display: inline;
@@ -160,6 +165,47 @@ a {
 }
 
 /************************************/
+
+/* Homepage*/
+
+.page-heading {
+  font-size: 5rem;
+  color: #61c8cb;
+  background-color: #0b282970;
+  text-align: center;
+  justify-content: center;
+  margin: 5rem auto;
+  border: 0.2rem solid #61c8cb;
+  border-radius: 1rem;
+  max-width: 55%;
+}
+
+/* .page-heading2 {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  justify-content: center;
+} */
+
+/* #intro-paragraph {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* .center-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  text-align: center;
+  padding: 10px;
+} */
+
 /* jpegs on homepage */
 .image-container {
   /* grid layout */
@@ -213,75 +259,8 @@ a {
 }
 
 /************************************/
-/* titles / descriptions */
-.page-heading {
-  font-size: 5rem;
-  color: #61c8cb;
-  background-color: #0b282970;
-  text-align: center;
-  justify-content: center;
-  margin: 5rem auto;
-  border: 0.2rem solid #61c8cb;
-  border-radius: 1rem;
-  max-width: 55%;
-}
 
-/* .page-heading2 {
-  font-size: 30px;
-  color: black;
-  text-align: center;
-  justify-content: center;
-} */
-
-/* #intro-paragraph {
-  font-size: 18px;
-  color: black;
-  text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
-.center-content {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 10px;
-  text-align: center;
-  padding: 10px;
-}
-
-.center-game {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 200px;
-  padding: 20px;
-  border: 3px solid #000000;
-  background-color: #fff419;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 4 rem auto;
-  text-align: center;
-}
-
-.center-game-blackjack {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 300px;
-  border: 3px solid #000000;
-  background-color: #fff419;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 4rem auto;
-}
-
-/************************************/
+/*Contact Us page*/
 
 .contact-form {
   margin: 2rem auto;
@@ -301,7 +280,7 @@ a {
 
 .thankyou-message {
   font-size: 2.5rem;
-  width: 50rem;
+  width: 42%;
   color: #f8b661;
   text-align: center;
   padding: 3rem;
@@ -309,7 +288,7 @@ a {
 
 /*************************************/
 
-/* All game page settings*/
+/* All game page styling*/
 
 .page-content {
   display: flex;
@@ -318,7 +297,7 @@ a {
   gap: 1rem;
   align-items: center;
   position: relative;
-  max-width: 80%;
+  width: 80%;
   background-color: rgba(29, 28, 28, 0.683);
   margin: auto;
   padding: 3rem;
@@ -357,29 +336,60 @@ a {
   font-size: 1.75rem;
 }
 
-/*****************************/
+/************************************/
+
+/*Blackjack and Number Guessing Game*/
+
+.center-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 300px;
+  padding: 20px;
+  border: 3px solid #000000;
+  background-color: #fff419;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 4 rem auto;
+  text-align: center;
+}
+
+.center-game-blackjack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  border: 3px solid #000000;
+  background-color: #fff419;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 4rem auto;
+}
+
+/************************************/
 
 /* Rock Paper Scissors*/
 
 .game-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   background-color: #61c8cb;
-  padding: 3rem;
+  padding: 5rem;
   border-radius: 1rem;
-  height: 40rem;
 }
 
 .choose-weapon {
   display: flex;
+  width: 20%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  grid-row: 1 / 4;
   padding: 1rem 0;
 }
 
@@ -392,7 +402,7 @@ a {
 }
 
 .weapon-option {
-  max-width: 11rem;
+  width: 50%;
 }
 
 .weapon-option:hover {
@@ -400,42 +410,51 @@ a {
 }
 
 .btn-play {
-  grid-column: 3 / 4;
-  width: 14rem;
+  width: 25%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 1rem;
   border: 0.25rem solid;
   cursor: pointer;
 }
 
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
+  height: 100%;
+  gap: 3rem;
+}
+
 .match {
-  grid-column: 2 / 5;
-  grid-row: 2 / 3;
   display: flex;
   position: relative;
   align-items: center;
-  gap: 10rem;
-  justify-content: space-around;
-  padding: 2rem;
-  height: 4rem;
+  justify-content: space-evenly;
+  width: 80%;
+  gap: 5rem;
 }
 
 .win-display {
   position: absolute;
-  top: -14rem;
+  top: 0;
+  width: 80%;
 }
 
 .tie-display {
   position: absolute;
-  top: -12rem;
+  top: 0;
   background-color: #fff;
   padding: 1rem;
-  width: 13rem;
+  width: 40%;
+  height: 20%;
 }
 
 .confetti {
-  width: 25rem;
+  width: 70%;
+  margin-left: 6rem;
 }
 
 .win-text,
@@ -456,10 +475,8 @@ a {
 
 .user-choice,
 .bot-choice {
-  width: 18rem;
-  margin-top: 2rem;
-  padding-top: 2.25rem;
-  height: 25rem;
+  width: 22rem;
+  margin-top: 4rem;
 }
 
 .versus {
@@ -472,31 +489,31 @@ a {
 }
 
 .score {
-  grid-column: 5 / 6;
-  grid-row: 2 / 3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 90%;
+  width: 20%;
   height: 100%;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .round {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  /* width: 20%; */
+  align-items: center;
 }
 
 .user-score,
 .bot-score {
-  height: 7rem;
+  max-height: 40%;
   font-size: 2rem;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .score-value {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .hidden {
@@ -504,9 +521,9 @@ a {
 }
 
 .btn-reset {
-  grid-column: 3 / 4;
-  grid-row: 3 / 4;
-  width: 15rem;
+  /* grid-column: 3 / 4;
+  grid-row: 3 / 4; */
+  width: 25%;
   font-size: 2rem;
   color: rgb(235, 232, 232);
   text-align: center;
@@ -529,21 +546,108 @@ a {
 
 /***************************************/
 
-/*Below 1400px*/
-@media (max-width: 87.5em) {
-  .match {
-    gap: 2.5rem;
-    width: 50%;
+/* Media queries for responsiveness */
+
+/* 1em = 16px, using 'em' because 'rem' does not work in mediaqueries */
+
+/*Below 1370px*/
+@media (max-width: 85.6em) {
+  .game-container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .choose-weapon {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 35%;
+    gap: 2rem;
+  }
+
+  .weapon-text {
+    margin-right: 2rem;
+  }
+
+  .score {
+    flex-direction: row;
+    width: fit-content;
+  }
+
+  .round {
+    align-self: center;
+    padding: 2rem;
+  }
+
+  .user-choice,
+  .bot-choice {
+    width: 20rem;
+    margin-top: 4rem;
+  }
+
+  .btn-play,
+  .btn-reset {
+    width: 30%;
+    font-size: 1.5rem;
+  }
+
+  .middle {
+    gap: 0;
   }
 }
 
-/* Below 740px*/
-@media (max-width: 46.25em) {
+/* 640-740px*/
+@media (max-width: 48.12em) {
   header {
     flex-direction: column;
     font-size: 1.5rem;
   }
   nav {
     align-items: start;
+  }
+
+  .user-choice,
+  .bot-choice {
+    width: 14rem;
+    margin-top: 4rem;
+  }
+
+  .score {
+    width: min-content;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .score p {
+    font-size: 1.5rem;
+  }
+
+  .versus {
+    font-size: 2rem;
+  }
+
+  .round {
+    align-self: center;
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  .btn-play,
+  .btn-reset {
+    width: 70%;
+    font-size: 1.5rem;
+  }
+
+  .win-text,
+  .tie-display {
+    font-size: 1.5rem;
+  }
+
+  .win-display,
+  .tie-display {
+    width: 100%;
+  }
+
+  .confetti {
+    display: none;
   }
 }

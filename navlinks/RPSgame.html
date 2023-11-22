@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" type="text/css" href="../style.css" />
-    <link rel="stylesheet" type="text/css" href="../queries.css" />
     <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -13,96 +11,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Rock Paper Scissors</title>
   </head>
-
-   
-    <body>
-      <header>
-        <nav class="navbar">
-          <a href="../index.html" class="btn"
-            ><i class="fa fa-home"></i> Home</a
-          >
-          <div class="dropdown">
-            <button class="dropbtn">
-              Games
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="../navlinks/BlackjackGame.html">Blackjack</a>
-              <!-- <a href="../navlinks/HangmanGame.html">Hangman</a> -->
-              <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
-            </div>
-          <a href="../navlinks/leaderboard.html">Leaderboard</a>
-          <a href="../navlinks/contact.html">Contact Us</a>
-          </nav>
-        </header>
-
-        <div class="page-content">
-          <button class="btn-exit">
-            <i class="fa-regular fa-circle-xmark"></i>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="btn"
+          ><i class="fa fa-home"></i> Home</a
+        >
+        <div class="dropdown">
+          <button class="dropbtn">
+            Games
+            <i class="fa fa-caret-down"></i>
           </button>
-          
-          <h1 class="game-title">Rock Paper Scissors</h1>
-          <h2 class="game-blurb">Best out of 5!</h2>
+          <div class="dropdown-content">
+            <a href="../navlinks/BlackjackGame.html">Blackjack</a>
+            <!-- <a href="../navlinks/HangmanGame.html">Hangman</a> -->
+            <a href="../navlinks/NumberGuesserGame.html">Number Guesser</a>
+          </div>
+        <a href="../navlinks/leaderboard.html">Leaderboard</a>
+        <a href="../navlinks/contact.html">Contact Us</a>
+        </nav>
+    </header>
 
-          <p class="game-description">
-            Rock beats scissors, scissors cut paper, and paper covers rock. It's
-            the ultimate quick decision-maker! Rock Paper Scissors is a simple
-            game of wits where you challenge the bot to make
-            split-second choices. It's all about outsmarting your opponent with
-            a flick of the wrist and a triumphant shout of "Rock, Paper,
-            Scissors, Shoot!"
-          </p>
+    <div class="page-content">
+      <button class="btn-exit">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </button>
+      
+      <h1 class="game-title">Rock Paper Scissors</h1>
+      <h2 class="game-blurb">Best out of 5!</h2>
 
-          <div class="game-container">
-            <section class="choose-weapon">
-              <p class="weapon-text">Choose your weapon:</p>
-              <img class="weapon-option" id="rock" src='../images/rock.png'>
-              <img class="weapon-option" id="paper" src='../images/paper.png'>
-              <img class="weapon-option" id="scissors" src='../images/scissors.png'>
-            </section>
+      <p class="game-description">
+        ➡️ Rock beats scissors, scissors cut paper, and paper covers rock<br>
+        ➡️ You got 5 rounds to try<br>
+        ➡️ Each winning round gives you 10 points
+      </p>
 
-            <button class="btn-play">Play</button>
+      <div class="game-container">
+        <div class="choose-weapon">
+          <p class="weapon-text">Choose your weapon:</p>
+          <img class="weapon-option" id="rock" src='../images/rock.png'>
+          <img class="weapon-option" id="paper" src='../images/paper.png'>
+          <img class="weapon-option" id="scissors" src='../images/scissors.png'>
+        </div>
 
-            <section class="match">
-              <div class="tie-display">It's a tie!</div>
-              <div class="user-section">
-                <div class="win-display user-wins">
-                  <p class="win-text user-text">You win this round!</p>
-                  <br />
-                  <img class="confetti" src="../images/confetti.png">
-                </div>
-                <img class="user-choice" src='../images/user.png'>
+        <div class="middle">
+          <button class="btn-play">Play</button>
+
+          <div class="match">
+            <div class="tie-display">It's a tie!</div>
+            <div class="user-section">
+              <div class="win-display user-wins">
+                <p class="win-text user-text">You win this round!</p>
+                <br />
+                <img class="confetti" src="../images/confetti.png">
               </div>
-              <div class="versus">vs</div>
-              <div class="bot-section">
-                <div class="win-display bot-wins">
-                  <p class="win-text bot-text">Bot wins this round!</p>
-                  <br />
-                  <img class="confetti" src="../images/confetti.png">
-                </div>
-                <img class="bot-choice" src="../images/bot.png">
+              <img class="user-choice" src='../images/user.png'>
+            </div>
+            <div class="versus">vs</div>
+            <div class="bot-section">
+              <div class="win-display bot-wins">
+                <p class="win-text bot-text">Bot wins this round!</p>
+                <br />
+                <img class="confetti" src="../images/confetti.png">
               </div>
-            </section>
-          
-            <button class="btn-reset">Reset Game</button> 
-          
-            <section class="score">
-              <div class="round">Round <span class="round-number">1</span></div>
-              <div class="user-score">
-                <p class="score-label">Your score:</p>
-                <br/>
-                <p class="score-value user-value">0</p>
-              </div>
-              <div class="bot-score">
-                <p class="score-label">Bot score:</p>
-                <br/>
-                <p class="score-value bot-value">0</p>
-              </div>
-            </section>
+              <img class="bot-choice" src="../images/bot.png">
+            </div>
+          </div>
+        
+          <button class="btn-reset">Reset Game</button> 
+        </div>
+      
+        <div class="score">
+          <div class="round">Round <span class="round-number">1</span></div>
+          <div class="user-score">
+            <p class="score-label">Your score:</p>
+            <br/>
+            <p class="score-value user-value">0</p>
+          </div>
+          <div class="bot-score">
+            <p class="score-label">Bot score:</p>
+            <br/>
+            <p class="score-value bot-value">0</p>
           </div>
         </div>
-        <footer>&copy; 2023 CIC Gaming Site</footer>
       </div>
-      <script src="../JSfiles/RPSGame.js"></script>
-    </body>
+    </div>
+
+    <footer>&copy; 2023 CIC Gaming Site</footer>
+    <script src="../JSfiles/RPSGame.js"></script>
+  </body>
 </html>
